@@ -17,4 +17,13 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public Skill GetSkillByType(SkillType skillType)
+    {
+        foreach(Skill skill in Skills)
+        {
+            if (skill.SkillType == skillType) return skill;
+        }
+        return null;
+    }
 }

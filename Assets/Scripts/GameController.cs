@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
-{
-    [SerializeField] private int TeamSize;
-    public Player Healer;
+{   
+    public Player Healer = null;
     public List<TeamMate> TeamMates = new List<TeamMate>();
     public float MonsterHealthTimer;
     public float MonsterAttackFrequency;
@@ -28,6 +27,7 @@ public class GameController : MonoBehaviour
     {
         //TODO: Initialize all the prefabs here!
         playerControlsUI = Instantiate(playerUIprefab);
+        playerControlsUI.gameController = this;
         playerControlsUI.transform.SetParent(gameCanvas.transform, false);
     }
 
