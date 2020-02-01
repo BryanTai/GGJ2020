@@ -10,7 +10,14 @@ public class GameController : MonoBehaviour
     public float MonsterHealthMax;
     public float MonsterAttackFrequency;
     public float MonsterAttackPower;
-    
+
+    public Canvas gameCanvas;
+    [HideInInspector] public PlayerControlsUI playerControlsUI;
+
+    [Header("Prefabs")]
+    public PlayerControlsUI playerUIprefab;
+
+    [HideInInspector] public Skill SelectedSkill = null;
 
     private void Awake()
     {
@@ -20,6 +27,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //TODO: Initialize all the prefabs here!
+        playerControlsUI = Instantiate(playerUIprefab);
+        playerControlsUI.transform.SetParent(gameCanvas.transform, false);
     }
 
     // Update is called once per frame

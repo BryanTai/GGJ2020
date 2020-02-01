@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private List<Skill> Skills = new List<Skill>();
+
     // Start is called before the first frame update
     void Start()
     {

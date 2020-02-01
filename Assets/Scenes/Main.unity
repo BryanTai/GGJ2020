@@ -1512,6 +1512,9 @@ MonoBehaviour:
   TeamSize: 0
   Healer: {fileID: 0}
   TeamMates: []
+  gameCanvas: {fileID: 1179161051}
+  playerControlsUI: {fileID: 0}
+  playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}
 --- !u!1 &2089170180
 GameObject:
   m_ObjectHideFlags: 0
