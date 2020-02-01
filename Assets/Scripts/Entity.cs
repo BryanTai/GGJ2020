@@ -1,13 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
     [SerializeField] protected int MaxHP;
-
-    public delegate void HandleOnHealthChanged(int newHealth);
-    public event HandleOnHealthChanged OnHealthChanged;
+    public event Action<int> OnHealthChanged;
 
     private int _health;
     public int Health
@@ -19,8 +18,13 @@ public class Entity : MonoBehaviour
         set
         {
             _health = value;
-            OnHealthChanged?.Invoke(_health);
+            OnHealthChanged(_health);
         }
+    }
+
+    private void Awake()
+    {
+        Health = MaxHP;
     }
 
     // Start is called before the first frame update
