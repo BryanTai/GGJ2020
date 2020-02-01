@@ -10,6 +10,7 @@ public class Monster : Entity
     private float healthMax;
     private float health;
     private float attackFreq;
+    private float attackFreqTime;
     private float attackPower;
     private float healthTimer;
     private float healthTimerInc;
@@ -25,6 +26,7 @@ public class Monster : Entity
         healthMax = gc.MonsterHealthMax;
         health = healthMax;
         attackFreq = gc.MonsterAttackFrequency;
+        attackFreqTime = 0;
         attackPower = gc.MonsterAttackPower;
         healthTimer = gc.MonsterHealthTimer;
         healthTimerInc = healthMax / healthTimer;
@@ -42,13 +44,17 @@ public class Monster : Entity
 
         // reduce health over time, based on number of alive party members
         health -= Time.deltaTime * healthTimerInc * (alivePartyMembers/totalPartyMembers);
-        // find target to attack
-        if(alivePartyMembers > 0)
+        
+        // find target to attack and attack
+        attackFreqTime += Time.deltaTime;
+        if(alivePartyMembers > 0 && attackFreqTime > attackFreq)
         {
             SelectTarget();
 
             // deal damage to target
+
         }
+        attackFreqTime = 0f; // reset freq
         
 
         if(health <= 0)
@@ -63,7 +69,7 @@ public class Monster : Entity
         viableTargets.Clear(); // resets viable targets
         for (int i = 0; totalPartyMembers <= 0; i++)
         {
-            if (gc.TeamMates[i].isAlive)
+            if (gc.TeamMates[i].IsAlive)
             {
                 // add party member to viable targets list
                 viableTargets[viableTargets.Count] = gc.TeamMates[i].gameObject;
