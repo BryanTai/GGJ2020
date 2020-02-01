@@ -22,13 +22,19 @@ public class SingleHealSkill : Skill
             return;
         }
 
-
-
+        teamMates[targetIndex].Health += SkillData.HealAmount;
         RemainingCoolDown = SkillData.CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        return true;
+        if (teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
