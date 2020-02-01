@@ -28,6 +28,14 @@ public class TeamMate : Entity
         Mood = MaxMood;
     }
 
+    public bool IsAlive
+    {
+        get
+        {
+            return Health != 0 && Mood != 0;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
