@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [Header("Prefabs")]
     public PlayerControlsUI playerUIprefab;
 
+    [HideInInspector] public Skill SelectedSkill = null;
+
     private void Awake()
     {
         
