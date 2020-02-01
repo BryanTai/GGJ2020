@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerControlsUI : MonoBehaviour
 {
+    public AudioSource basicHealAudioSource;
+
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
 
@@ -23,6 +25,7 @@ public class PlayerControlsUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         for(int s = 0; s < TOTAL_SKILLS; s++)
         {
             SkillButton skillButton = Instantiate(skillButtonPrefab);
@@ -44,6 +47,7 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
+
     }
 
     public void OnSkillButtonPressed(int index)
@@ -56,6 +60,7 @@ public class PlayerControlsUI : MonoBehaviour
     public void OnTeamMateButtonPressed(int index)
     {
         Debug.LogFormat("Teammate {0} pressed!", index);
+        basicHealAudioSource.PlayOneShot(basicHealAudioSource.clip);
         gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
         HighlightButton(teamMateButtons, index);
     }

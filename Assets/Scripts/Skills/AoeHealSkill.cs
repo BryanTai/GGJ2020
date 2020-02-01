@@ -20,7 +20,7 @@ public class AoeHealSkill : Skill
             return;
         }
 
-        for(int i = Mathf.Max(0, targetIndex - 1); i <= Mathf.Min(teamMates.Count - 1, targetIndex + 1); ++i)
+        for (int i = Mathf.Max(0, targetIndex - 1); i <= Mathf.Min(teamMates.Count - 1, targetIndex + 1); ++i)
         {
             if (!teamMates[i].IsAlive) continue;
             teamMates[i].Health += SkillData.HealAmount;
