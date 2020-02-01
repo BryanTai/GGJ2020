@@ -9,8 +9,8 @@ public class PlayerControlsUI : MonoBehaviour
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
 
-    public List<SkillButton> skillButtons = new List<SkillButton>();
-    public List<TeamMateButton> teamMateButtons = new List<TeamMateButton>();
+    [HideInInspector] public List<SkillButton> skillButtons = new List<SkillButton>();
+    [HideInInspector] public List<TeamMateButton> teamMateButtons = new List<TeamMateButton>();
 
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;

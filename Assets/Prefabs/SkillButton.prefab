@@ -132,3 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonImage: {fileID: 4795293395083346782}
   highlight: {fileID: 0}
+  buttonSprites:
+  - {fileID: 21300000, guid: a139ed3b855223c498d1100f9519ea51, type: 3}
+  - {fileID: 21300000, guid: b5bd005882f0b3b42b8b35bf3a7781cf, type: 3}
+  - {fileID: 21300000, guid: 5e3e5b10dcaad6442a509be152bd3aef, type: 3}

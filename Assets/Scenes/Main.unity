@@ -1086,7 +1086,7 @@ Canvas:
   m_GameObject: {fileID: 1179161048}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1944630691}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1509,6 +1509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b131200d234dc8f4ab1efa1b0dc43272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TeamSize: 0
+  Healer: {fileID: 0}
+  TeamMates: []
 --- !u!1 &2089170180
 GameObject:
   m_ObjectHideFlags: 0
