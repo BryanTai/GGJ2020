@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeabe2d9a10a8314c8f7756c74e8ff33, type: 3}
-  m_Name: RogueFaces
+  m_Name: WarriorFaces
   m_EditorClassIdentifier: 
   Faces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
+  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
+  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
+  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
+  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}

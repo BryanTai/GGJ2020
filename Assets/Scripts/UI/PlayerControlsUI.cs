@@ -22,6 +22,9 @@ public class PlayerControlsUI : MonoBehaviour
 
     [HideInInspector] public GameController gameController;
 
+    [Header("Art References")]
+    public List<TeammateFaces> TeammateFacesList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,7 @@ public class PlayerControlsUI : MonoBehaviour
             skillButton.InitButton(s);
             skillButtons.Add(skillButton);
 
-            int index = s;
+            int index = s; //Need to manually seperate the index
             skillButton.uiButton.onClick.AddListener(delegate { OnSkillButtonPressed(index); });
         }
 
@@ -41,10 +44,11 @@ public class PlayerControlsUI : MonoBehaviour
         {
             TeamMateButton tmButton = Instantiate(teamMateButtonPrefab);
             tmButton.transform.SetParent(teamMateButtonParent, false);
+            tmButton.faceReferences = TeammateFacesList[t];
             tmButton.InitButton(t);
             teamMateButtons.Add(tmButton);
 
-            int index = t;
+            int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
 

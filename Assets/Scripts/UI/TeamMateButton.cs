@@ -12,6 +12,7 @@ public class TeamMateButton : UIButton
     {
         base.InitButton(index);
         SetHealthPercentage(1f);
+        SetFaceFromType(TeammateFaces.FaceType.NEUTRAL);
     }
 
     public void SetHealthPercentage(float newHealth)
