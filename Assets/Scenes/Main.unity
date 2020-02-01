@@ -1233,6 +1233,7 @@ GameObject:
   - component: {fileID: 1366876458}
   - component: {fileID: 1366876457}
   - component: {fileID: 1366876456}
+  - component: {fileID: 1366876459}
   m_Layer: 0
   m_Name: Boss Monster
   m_TagString: Untagged
@@ -1314,6 +1315,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366876454}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1366876459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366876454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9a3af6d02e8c649beb54ea6568efaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
 --- !u!1 &1378532438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,9 +1648,9 @@ MonoBehaviour:
   - {fileID: 2089170185}
   - {fileID: 1473696459}
   - {fileID: 233016010}
-  MonsterHealthTimer: 0
-  MonsterAttackFrequency: 0
-  MonsterAttackPower: 0
+  MonsterHealthTimer: 10
+  MonsterAttackFrequency: 1
+  MonsterAttackPower: 10
   gameCanvas: {fileID: 1179161051}
   playerControlsUI: {fileID: 0}
   playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}

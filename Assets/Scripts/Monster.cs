@@ -116,13 +116,6 @@ public class Monster : Entity
 
     public bool IsDead()
     {
-        if (isDead)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return isDead;
     }
 }
