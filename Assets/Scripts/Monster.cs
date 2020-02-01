@@ -63,7 +63,7 @@ public class Monster : Entity
         viableTargets.Clear(); // resets viable targets
         for (int i = 0; totalPartyMembers <= 0; i++)
         {
-            if (gc.TeamMates[i].isAlive)
+            if (gc.TeamMates[i].IsAlive)
             {
                 // add party member to viable targets list
                 viableTargets[viableTargets.Count] = gc.TeamMates[i].gameObject;
