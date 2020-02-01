@@ -7,7 +7,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private int TeamSize;
     public Player Healer;
     public List<TeamMate> TeamMates = new List<TeamMate>();
-
+    public float MonsterHealthMax;
+    public float MonsterAttackFrequency;
+    public float MonsterAttackPower;
     
 
     private void Awake()
