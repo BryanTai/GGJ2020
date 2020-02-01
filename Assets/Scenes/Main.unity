@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 16450bc7dbf2e984d8a4bdfe181b97bc,
         type: 3}
       propertyPath: m_Name
-      value: 'rouge place holder '
+      value: 'rogue place holder '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16450bc7dbf2e984d8a4bdfe181b97bc, type: 3}
@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 233016009}
   - component: {fileID: 233016008}
   - component: {fileID: 233016007}
+  - component: {fileID: 233016010}
   m_Layer: 0
   m_Name: Party Member 4
   m_TagString: PartyMember
@@ -321,6 +322,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233016005}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &233016010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233016005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  MaxMood: 100
 --- !u!1 &239688640
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +442,7 @@ GameObject:
   - component: {fileID: 434770522}
   - component: {fileID: 434770521}
   - component: {fileID: 434770520}
+  - component: {fileID: 434770523}
   m_Layer: 0
   m_Name: Party Member 1
   m_TagString: PartyMember
@@ -509,6 +525,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434770518}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &434770523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434770518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  MaxMood: 100
 --- !u!1 &467063830
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +584,7 @@ GameObject:
   - component: {fileID: 477653084}
   - component: {fileID: 477653083}
   - component: {fileID: 477653082}
+  - component: {fileID: 477653085}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Player
@@ -636,6 +667,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477653080}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &477653085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477653080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a607eac380711a24ea5ff7a6cfe565d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &528852934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,6 +1078,7 @@ GameObject:
   - component: {fileID: 1179161051}
   - component: {fileID: 1179161050}
   - component: {fileID: 1179161049}
+  - component: {fileID: 1179161053}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1117,6 +1165,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1179161053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179161048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  MaxMood: 100
 --- !u!1 &1366876454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1318,7 @@ GameObject:
   - component: {fileID: 1473696458}
   - component: {fileID: 1473696457}
   - component: {fileID: 1473696456}
+  - component: {fileID: 1473696459}
   m_Layer: 0
   m_Name: Party Member 3
   m_TagString: PartyMember
@@ -1338,6 +1401,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473696454}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1473696459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473696454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  MaxMood: 100
 --- !u!1001 &1498966818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1512,9 +1589,14 @@ MonoBehaviour:
   TeamSize: 0
   Healer: {fileID: 0}
   TeamMates: []
+  MonsterHealthMax: 0
+  MonsterHealthTimer: 0
+  MonsterAttackFrequency: 0
+  MonsterAttackPower: 0
   gameCanvas: {fileID: 1179161051}
   playerControlsUI: {fileID: 0}
   playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}
+  SelectedSkill: {fileID: 0}
 --- !u!1 &2089170180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1609,7 @@ GameObject:
   - component: {fileID: 2089170184}
   - component: {fileID: 2089170183}
   - component: {fileID: 2089170182}
+  - component: {fileID: 2089170185}
   m_Layer: 0
   m_Name: Party Member 2
   m_TagString: PartyMember
@@ -1609,3 +1692,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089170180}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2089170185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089170180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  MaxMood: 100

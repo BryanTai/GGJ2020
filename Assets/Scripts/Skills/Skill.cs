@@ -21,7 +21,7 @@ public abstract class Skill : MonoBehaviour
 
         if (RemainingCoolDown == 0)
         {
-            OnCoolDownRefreshed();
+            OnCoolDownRefreshed?.Invoke();
         }
     }
 }
