@@ -17,7 +17,8 @@ public class TeamMate : Entity
         }
         set
         {
-            _mood = value;
+            _mood = Mathf.Min(MaxMood, _mood);
+            _mood = Mathf.Max(0, _mood);
             OnMoodChanged(_mood);
         }
     }
