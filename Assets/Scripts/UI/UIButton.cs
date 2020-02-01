@@ -15,7 +15,7 @@ public class UIButton : MonoBehaviour
         ToggleHighlight(false);
     }
 
-    public void InitButton(int index)
+    public virtual void InitButton(int index)
     {
         buttonImage.sprite = buttonSprites[index];
     }
