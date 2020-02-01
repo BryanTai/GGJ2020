@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int TeamSize;
+    public Player Healer;
+    public List<TeamMate> TeamMates = new List<TeamMate>();
+
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
         //TODO: Initialize all the prefabs here!
