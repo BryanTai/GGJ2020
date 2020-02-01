@@ -19,13 +19,13 @@ public class TeamMate : Entity
         {
             _mood = Mathf.Min(MaxMood, _mood);
             _mood = Mathf.Max(0, _mood);
-            OnMoodChanged(_mood);
+            OnMoodChanged?.Invoke(_mood);
         }
     }
 
     private void Awake()
     {
-        Mood = MaxMood;
+       
     }
 
     public bool IsAlive
@@ -39,7 +39,7 @@ public class TeamMate : Entity
     // Start is called before the first frame update
     void Start()
     {
-        
+        Mood = MaxMood;
     }
 
     // Update is called once per frame

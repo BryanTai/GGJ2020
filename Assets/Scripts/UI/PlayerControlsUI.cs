@@ -20,6 +20,8 @@ public class PlayerControlsUI : MonoBehaviour
     public SkillButton skillButtonPrefab;
     public TeamMateButton teamMateButtonPrefab;
 
+    [HideInInspector] public GameController gameController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class PlayerControlsUI : MonoBehaviour
     public void OnSkillButtonPressed(int index)
     {
         Debug.LogFormat("Skill {0} pressed!", index);
-
+        gameController.SelectedSkill = gameController.Healer.GetSkillByType((SkillType)index);
         HighlightButton(skillButtons, index);
     }
 
@@ -59,6 +61,7 @@ public class PlayerControlsUI : MonoBehaviour
     {
         Debug.LogFormat("Teammate {0} pressed!", index);
         basicHealAudioSource.PlayOneShot(basicHealAudioSource.clip);
+        gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
         HighlightButton(teamMateButtons, index);
     }
 

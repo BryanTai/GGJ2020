@@ -19,19 +19,19 @@ public class Entity : MonoBehaviour
         {
             _health = Mathf.Min(MaxHP, value);
             _health = Mathf.Max(value, 0);
-            OnHealthChanged(_health);
+            OnHealthChanged?.Invoke(_health);
         }
     }
 
     private void Awake()
     {
-        Health = MaxHP;
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = MaxHP;
     }
 
     // Update is called once per frame
