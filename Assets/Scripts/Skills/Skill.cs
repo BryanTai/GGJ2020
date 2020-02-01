@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Skill
 {
-    [SerializeField] protected int CoolDown;
+    [SerializeField] protected SkillData SkillData;
+    [HideInInspector] protected float RemainingCoolDown;
     public abstract SkillType SkillType { get; }
 
     public abstract void CastSkill(List<TeamMate> teamMates, int targetIndex);
