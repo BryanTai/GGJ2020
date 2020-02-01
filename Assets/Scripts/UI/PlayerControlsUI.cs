@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerControlsUI : MonoBehaviour
 {
+    public AudioClip soundToPlay;
+    public float volume;
+    AudioSource audio;
+
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
 
@@ -40,6 +44,8 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
+
+        audio = GetComponent<AudioSource>();
     }
 
     public void OnSkillButtonPressed(int index)
@@ -50,6 +56,7 @@ public class PlayerControlsUI : MonoBehaviour
     public void OnTeamMateButtonPressed(int index)
     {
         Debug.LogFormat("Teammate {0} pressed!", index);
+        audio.PlayOneShot(soundToPlay, volume);
     }
 
 }
