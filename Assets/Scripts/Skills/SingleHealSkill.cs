@@ -15,7 +15,13 @@ public class SingleHealSkill : Skill
 
     public override void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
+        if(!CanCast(teamMates, targetIndex))
+        {
+            return;
+        }
 
+
+        RemainingCoolDown = CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
