@@ -408,4 +408,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
   - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
   - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
+  uiButton: {fileID: 210294899129928737}
   healthBar: {fileID: 334378878}
