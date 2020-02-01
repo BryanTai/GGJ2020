@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public Player Healer;
     public List<TeamMate> TeamMates = new List<TeamMate>();
 
+    
+
     private void Awake()
     {
         

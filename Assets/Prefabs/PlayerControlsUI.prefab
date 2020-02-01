@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 110658437277530851}
   - component: {fileID: 763257751871586434}
   m_Layer: 5
-  m_Name: Skill Boxes
+  m_Name: SkillButtonParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 6646912816492683262}
   - component: {fileID: 5749393693919332983}
   m_Layer: 5
-  m_Name: Teammate Boxes
+  m_Name: TeammateButtonParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,3 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d546a3f567d3cdf4cb0d4465f4fe7282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillButtons: []
+  teamMateButtons: []
+  skillButtonParent: {fileID: 110658437277530851}
+  teamMateButtonParent: {fileID: 6646912816492683262}
+  skillButtonPrefab: {fileID: 7094723318610791819, guid: f7488d5988c89d34d8d9236b62628567,
+    type: 3}
+  teamMateButtonPrefab: {fileID: 399824732, guid: d327e7032597f834f805c1ff95909d94,
+    type: 3}
