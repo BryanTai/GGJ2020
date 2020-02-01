@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeabe2d9a10a8314c8f7756c74e8ff33, type: 3}
   m_Name: MageFaces
   m_EditorClassIdentifier: 
-  Faces: []
+  Faces:
+  - {fileID: 21300000, guid: ea41358c619c5494eb192b9fd4798066, type: 3}
+  - {fileID: 21300000, guid: 5945bc1fb90d8d64381f1e58d843c523, type: 3}
+  - {fileID: 21300000, guid: 5e6e9e1540ec97a4286e58ccb0767395, type: 3}
+  - {fileID: 21300000, guid: c75c80b5700057a40a39779fb2469e73, type: 3}
+  - {fileID: 21300000, guid: 28b624008093c2848a8391bd5ce11b98, type: 3}

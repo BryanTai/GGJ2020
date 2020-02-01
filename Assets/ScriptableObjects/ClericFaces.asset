@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeabe2d9a10a8314c8f7756c74e8ff33, type: 3}
   m_Name: ClericFaces
   m_EditorClassIdentifier: 
-  Faces: []
+  Faces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

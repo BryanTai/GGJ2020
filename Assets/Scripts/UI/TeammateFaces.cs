@@ -7,11 +7,11 @@ public class TeammateFaces : ScriptableObject
     [SerializeField]
     public enum FaceType
     {
+        ATTACKING,
         HAPPY,
-        NEUTRAL,
-        WORSE,
         BAD,
-        ATTACKING
+        WORSE,
+        NEUTRAL,
     }
 
     public Sprite[] Faces;
