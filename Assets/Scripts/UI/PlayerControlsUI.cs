@@ -9,8 +9,8 @@ public class PlayerControlsUI : MonoBehaviour
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
 
-    [HideInInspector] public List<SkillButton> skillButtons = new List<SkillButton>();
-    [HideInInspector] public List<TeamMateButton> teamMateButtons = new List<TeamMateButton>();
+    [HideInInspector] public List<UIButton> skillButtons = new List<UIButton>();
+    [HideInInspector] public List<UIButton> teamMateButtons = new List<UIButton>();
 
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;
@@ -26,6 +26,7 @@ public class PlayerControlsUI : MonoBehaviour
             SkillButton skillButton = Instantiate(skillButtonPrefab);
             skillButton.transform.SetParent(skillButtonParent, false);
             skillButton.InitButton(s);
+            skillButtons.Add(skillButton);
 
             int index = s;
             skillButton.uiButton.onClick.AddListener(delegate { OnSkillButtonPressed(index); });
@@ -36,6 +37,7 @@ public class PlayerControlsUI : MonoBehaviour
             TeamMateButton tmButton = Instantiate(teamMateButtonPrefab);
             tmButton.transform.SetParent(teamMateButtonParent, false);
             tmButton.InitButton(t);
+            teamMateButtons.Add(tmButton);
 
             int index = t;
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
@@ -45,11 +47,23 @@ public class PlayerControlsUI : MonoBehaviour
     public void OnSkillButtonPressed(int index)
     {
         Debug.LogFormat("Skill {0} pressed!", index);
+
+        HighlightButton(skillButtons, index);
     }
 
     public void OnTeamMateButtonPressed(int index)
     {
         Debug.LogFormat("Teammate {0} pressed!", index);
+
+        HighlightButton(teamMateButtons, index);
     }
 
+    private void HighlightButton(List<UIButton> allButtons, int index)
+    {
+        for(int i = 0; i < allButtons.Count; i++)
+        {
+            UIButton button = allButtons[i];
+            button.ToggleHighlight(i == index);
+        }
+    }
 }
