@@ -20,6 +20,13 @@ public class AoeHealSkill : Skill
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        return true;
+        if(teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
