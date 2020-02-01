@@ -7,12 +7,17 @@ public class GameController : MonoBehaviour
     [SerializeField] private int TeamSize;
     public Player Healer;
     public List<TeamMate> TeamMates = new List<TeamMate>();
+    public float MonsterHealthMax;
+    public float MonsterAttackFrequency;
+    public float MonsterAttackPower;
 
     public Canvas gameCanvas;
     [HideInInspector] public PlayerControlsUI playerControlsUI;
 
     [Header("Prefabs")]
     public PlayerControlsUI playerUIprefab;
+
+    [HideInInspector] public Skill SelectedSkill = null;
 
     private void Awake()
     {
