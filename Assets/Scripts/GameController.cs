@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public Player Healer;
     public List<TeamMate> TeamMates = new List<TeamMate>();
     public float MonsterHealthMax;
+    public float MonsterHealthTimer;
     public float MonsterAttackFrequency;
     public float MonsterAttackPower;
 

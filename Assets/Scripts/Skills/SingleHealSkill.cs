@@ -22,8 +22,7 @@ public class SingleHealSkill : Skill
             return;
         }
 
-
-
+        teamMates[targetIndex].Health += SkillData.HealAmount;
         RemainingCoolDown = SkillData.CoolDown;
     }
 

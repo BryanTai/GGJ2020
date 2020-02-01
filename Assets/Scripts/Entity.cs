@@ -17,7 +17,8 @@ public class Entity : MonoBehaviour
         }
         set
         {
-            _health = value;
+            _health = Mathf.Min(MaxHP, value);
+            _health = Mathf.Max(value, 0);
             OnHealthChanged(_health);
         }
     }
