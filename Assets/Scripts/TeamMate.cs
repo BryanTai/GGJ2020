@@ -1,13 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TeamMate : Entity
 {
     [SerializeField] private int MaxMood;
-
-    public delegate void HandleOnMoodChanged(int newMood);
-    public event HandleOnMoodChanged OnMoodChanged;
+    public event Action<int> OnMoodChanged;
 
     private int _mood;
     public int Mood
@@ -19,7 +18,7 @@ public class TeamMate : Entity
         set
         {
             _mood = value;
-            OnMoodChanged?.Invoke(_mood);
+            OnMoodChanged(_mood);
         }
     }
 
