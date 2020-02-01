@@ -26,6 +26,9 @@ public class PlayerControlsUI : MonoBehaviour
             SkillButton skillButton = Instantiate(skillButtonPrefab);
             skillButton.transform.SetParent(skillButtonParent, false);
             skillButton.InitButton(s);
+
+            int index = s;
+            skillButton.uiButton.onClick.AddListener(delegate { OnSkillButtonPressed(index); });
         }
 
         for (int t = 0; t < TOTAL_TEAMMATES; t++)
@@ -33,17 +36,20 @@ public class PlayerControlsUI : MonoBehaviour
             TeamMateButton tmButton = Instantiate(teamMateButtonPrefab);
             tmButton.transform.SetParent(teamMateButtonParent, false);
             tmButton.InitButton(t);
+
+            int index = t;
+            tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
     }
 
     public void OnSkillButtonPressed(int index)
     {
-        
+        Debug.LogFormat("Skill {0} pressed!", index);
     }
 
     public void OnTeamMateButtonPressed(int index)
     {
-
+        Debug.LogFormat("Teammate {0} pressed!", index);
     }
 
 }

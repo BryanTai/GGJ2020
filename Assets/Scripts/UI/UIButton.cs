@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Parent class for buttons
-public class UIButton : MonoBehaviour
+public abstract class UIButton : MonoBehaviour
 {
     public Image buttonImage;
     public GameObject highlight;
     public List<Sprite> buttonSprites;
+    public Button uiButton;
 
     private void Start()
     {
