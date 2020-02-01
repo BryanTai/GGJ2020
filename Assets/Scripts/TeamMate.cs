@@ -17,8 +17,8 @@ public class TeamMate : Entity
         }
         set
         {
-            _mood = Mathf.Min(MaxMood, _mood);
-            _mood = Mathf.Max(0, _mood);
+            _mood = Mathf.Min(MaxMood, value);
+            _mood = Mathf.Max(0, value);
             OnMoodChanged?.Invoke(_mood);
         }
     }
@@ -37,8 +37,9 @@ public class TeamMate : Entity
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         Mood = MaxMood;
     }
 

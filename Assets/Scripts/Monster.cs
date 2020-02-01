@@ -15,13 +15,14 @@ public class Monster : Entity
     private float healthTimerInc;
     private int alivePartyMembers;
     private int totalPartyMembers;
-    public bool isDead;
+    private bool isDead;
 
     private List<GameObject> viableTargets = new List<GameObject>();
     private GameObject currentTarget;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         // Grab Variables
         gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         health = MaxHP;
@@ -34,36 +35,41 @@ public class Monster : Entity
         totalPartyMembers = gc.TeamMates.Count;
         isDead = false;
 
-        SelectTarget();
+        //SelectTarget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // check alive party members
-        alivePartyMembers = gc.TeamMates.Count;
-
-        // reduce health over time, based on number of alive party members
-        health -= Time.deltaTime * healthTimerInc * (alivePartyMembers/totalPartyMembers);
-        
-        // find target to attack and attack
-        attackFreqTime += Time.deltaTime;
-        if(alivePartyMembers > 0 && attackFreqTime > attackFreq)
+        if(!isDead)
         {
-            SelectTarget();
+            // check alive party members
+            CheckAlivePartyMembers();
 
-            // deal damage to target
-            Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
-            Debug.Log("Monster's Health: " + health.ToString());
+            // reduce health over time, based on number of alive party members
+            health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
+            // find target to attack and attack
+            attackFreqTime += Time.deltaTime;
 
-        }
-        attackFreqTime = 0f; // reset freq
-        
+            if (attackFreqTime > attackFreq) // attack
+            {
+                if (alivePartyMembers > 0) // attack a player if alive
+                {
+                    SelectTarget();
 
-        if(health <= 0)
-        {
-            Dead();
-            Debug.Log("Monster is dead!");
+                    // deal damage to target
+                    Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
+                    Debug.Log("Monster's Health: " + health.ToString());
+                }
+                attackFreqTime = 0f; //reset attack timer
+            }
+
+
+            if(health <= 0 && !isDead)
+            {
+                Dead();
+                health = 0;
+            }
         }
     }
 
@@ -71,18 +77,33 @@ public class Monster : Entity
     {
         // figure out which targets are alive
         viableTargets.Clear(); // resets viable targets
-        for (int i = 0; totalPartyMembers <= 0; i++)
+        for (int i = 0; i < totalPartyMembers; i++)
         {
+            
             if (gc.TeamMates[i].IsAlive)
             {
                 // add party member to viable targets list
-                viableTargets[viableTargets.Count] = gc.TeamMates[i].gameObject;
+                viableTargets.Add(gc.TeamMates[i].gameObject);
+                //viableTargets[viableTargets.Count-1] = gc.TeamMates[i].gameObject;
             }
         }
 
         // choose a random target among those alive
-        currentTarget = viableTargets[Random.Range(0, viableTargets.Count - 1)];
+        //currentTarget = viableTargets[Random.Range(0, viableTargets.Count - 1)];
+        currentTarget = viableTargets[0];
         Debug.Log("Targeted Party Member: " + currentTarget.ToString());
+    }
+
+    private void CheckAlivePartyMembers()
+    {
+        alivePartyMembers = 0;
+        for (int i = 0; i < totalPartyMembers; i++)
+        {
+            if (gc.TeamMates[i].IsAlive)
+            {
+                alivePartyMembers++;
+            }
+        }
     }
 
     // when the monster dies
@@ -90,5 +111,18 @@ public class Monster : Entity
     {
         // success!
         isDead = true;
+        Debug.Log("Monster is dead!");
+    }
+
+    public bool IsDead()
+    {
+        if (isDead)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
