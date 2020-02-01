@@ -15,6 +15,7 @@ public class Monster : Entity
     private float healthTimerInc;
     private int alivePartyMembers;
     private int totalPartyMembers;
+    public bool isDead;
 
     private List<GameObject> viableTargets = new List<GameObject>();
     private GameObject currentTarget;
@@ -31,6 +32,7 @@ public class Monster : Entity
         healthTimerInc = MaxHP / healthTimer;
         alivePartyMembers = gc.TeamMates.Count;
         totalPartyMembers = gc.TeamMates.Count;
+        isDead = false;
 
         SelectTarget();
     }
@@ -61,6 +63,7 @@ public class Monster : Entity
         if(health <= 0)
         {
             Dead();
+            Debug.Log("Monster is dead!");
         }
     }
 
@@ -86,5 +89,6 @@ public class Monster : Entity
     private void Dead()
     {
         // success!
+        isDead = true;
     }
 }
