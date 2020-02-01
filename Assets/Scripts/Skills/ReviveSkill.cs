@@ -20,6 +20,7 @@ public class ReviveSkill : Skill
         }
 
         teamMates[targetIndex].Health += SkillData.HealAmount;
+        teamMates[targetIndex].Mood += SkillData.MoodAmount;
         RemainingCoolDown = SkillData.CoolDown;
     }
 
