@@ -8,7 +8,11 @@ public class GameController : MonoBehaviour
     public Player Healer;
     public List<TeamMate> TeamMates = new List<TeamMate>();
 
-    
+    public Canvas gameCanvas;
+    [HideInInspector] public PlayerControlsUI playerControlsUI;
+
+    [Header("Prefabs")]
+    public PlayerControlsUI playerUIprefab;
 
     private void Awake()
     {
@@ -18,6 +22,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //TODO: Initialize all the prefabs here!
+        playerControlsUI = Instantiate(playerUIprefab);
+        playerControlsUI.transform.SetParent(gameCanvas.transform, false);
     }
 
     // Update is called once per frame
