@@ -7,7 +7,11 @@ using UnityEngine.UI;
 public class PlayerControlsUI : MonoBehaviour
 {
     public AudioSource basicHealAudioSource;
+    [HideInInspector] public GameController gameController;
 
+    public Slider bossHealthSlider;
+
+    [Header("Skill and Teammate Buttons")]
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
 
@@ -20,15 +24,14 @@ public class PlayerControlsUI : MonoBehaviour
     public SkillButton skillButtonPrefab;
     public TeamMateButton teamMateButtonPrefab;
 
-    [HideInInspector] public GameController gameController;
-
     [Header("Art References")]
     public List<TeammateFaces> TeammateFacesList;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bossHealthSlider.value = 1f;
+
         for(int s = 0; s < TOTAL_SKILLS; s++)
         {
             SkillButton skillButton = Instantiate(skillButtonPrefab);
@@ -51,7 +54,6 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
-
     }
 
     public void OnSkillButtonPressed(int index)
