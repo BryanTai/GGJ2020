@@ -6,8 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Monster : Entity
 {
-    private GameController gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
-    private float healthMax;
+    private GameController gc;
     private float health;
     private float attackFreq;
     private float attackFreqTime;
@@ -23,13 +22,13 @@ public class Monster : Entity
     void Start()
     {
         // Grab Variables
-        healthMax = gc.MonsterHealthMax;
-        health = healthMax;
+        gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
+        health = MaxHP;
         attackFreq = gc.MonsterAttackFrequency;
         attackFreqTime = 0;
         attackPower = gc.MonsterAttackPower;
         healthTimer = gc.MonsterHealthTimer;
-        healthTimerInc = healthMax / healthTimer;
+        healthTimerInc = MaxHP / healthTimer;
         alivePartyMembers = gc.TeamMates.Count;
         totalPartyMembers = gc.TeamMates.Count;
 
@@ -52,6 +51,8 @@ public class Monster : Entity
             SelectTarget();
 
             // deal damage to target
+            Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
+            Debug.Log("Monster's Health: " + health.ToString());
 
         }
         attackFreqTime = 0f; // reset freq
@@ -78,6 +79,7 @@ public class Monster : Entity
 
         // choose a random target among those alive
         currentTarget = viableTargets[Random.Range(0, viableTargets.Count - 1)];
+        Debug.Log("Targeted Party Member: " + currentTarget.ToString());
     }
 
     // when the monster dies
