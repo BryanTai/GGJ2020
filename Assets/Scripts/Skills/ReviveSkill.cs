@@ -14,7 +14,13 @@ public class ReviveSkill : Skill
 
     public override void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
+        if (!CanCast(teamMates, targetIndex))
+        {
+            return;
+        }
 
+        teamMates[targetIndex].Health += SkillData.HealAmount;
+        RemainingCoolDown = SkillData.CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
