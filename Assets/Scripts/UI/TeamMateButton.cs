@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TeamMateButton : UIButton
 {
     public Slider healthBar;
+    public TeammateFaces faceReferences;
 
     public override void InitButton(int index)
     {
@@ -16,5 +17,10 @@ public class TeamMateButton : UIButton
     public void SetHealthPercentage(float newHealth)
     {
         healthBar.value = newHealth;
+    }
+
+    public void SetFaceFromType(TeammateFaces.FaceType type)
+    {
+        uiButton.image.sprite = faceReferences.GetFaceForFaceType(type);
     }
 }
