@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SingleHealSkill : Skill
 {
+    public int HealAmount { get; private set; }
+
     public override SkillType SkillType
     {
         get
@@ -21,7 +23,8 @@ public class SingleHealSkill : Skill
         }
 
 
-        RemainingCoolDown = CoolDown;
+
+        RemainingCoolDown = SkillData.CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
