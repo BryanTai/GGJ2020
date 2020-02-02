@@ -82,21 +82,44 @@ public class TeamMate : Entity
             state_time -= Time.deltaTime;
         }
 
-        // swpa back to idle state
-        if(state_time <= 0)
+        // swap back to idle state / second attack state
+        if(state_time <= 0 && state != ActionState.Idle)
         {
-            state = ActionState.Idle;
-            state_time = 0;
-
-            for (int i = 0; i < CharacterStates.Count; i++)
+            // if this character is a paladin or warrior, and they aren't in the finished attacking state
+            if((Class == TeamMateClass.Paladin || Class == TeamMateClass.Warrior) && state != ActionState.AttackingFinished)
             {
-                if (i == 0)
+                state = ActionState.AttackingFinished;
+                state_time = state_timeMax;
+
+                for (int i = 0; i < CharacterStates.Count; i++)
                 {
-                    CharacterStates[i].SetActive(true);
+                    if (i == 3)
+                    {
+                        CharacterStates[i].SetActive(true);
+                    }
+                    else
+                    {
+                        CharacterStates[i].SetActive(false);
+                    }
                 }
-                else
+
+
+            }
+            else // reset state to idle
+            {
+                state = ActionState.Idle;
+                state_time = 0;
+
+                for (int i = 0; i < CharacterStates.Count; i++)
                 {
-                    CharacterStates[i].SetActive(false);
+                    if (i == 0)
+                    {
+                        CharacterStates[i].SetActive(true);
+                    }
+                    else
+                    {
+                        CharacterStates[i].SetActive(false);
+                    }
                 }
             }
         }
@@ -106,6 +129,49 @@ public class TeamMate : Entity
     {
         state = new_state;
         state_time = state_timeMax;
+
+        if (state == ActionState.Damaged)
+        {
+            for (int i = 0; i < CharacterStates.Count; i++)
+            {
+                if (i == 1)
+                {
+                    CharacterStates[i].SetActive(true);
+                }
+                else
+                {
+                    CharacterStates[i].SetActive(false);
+                }
+            }
+        }
+        else if (state == ActionState.Attacking) // attacking finished states are handled manually
+        {
+            for (int i = 0; i < CharacterStates.Count; i++)
+            {
+                if (i == 2)
+                {
+                    CharacterStates[i].SetActive(true);
+                }
+                else
+                {
+                    CharacterStates[i].SetActive(false);
+                }
+            }
+        }
+        else if (state == ActionState.Cheering) // only warrior and paladin have cheers
+        {
+            for (int i = 0; i < CharacterStates.Count; i++)
+            {
+                if (i == 4)
+                {
+                    CharacterStates[i].SetActive(true);
+                }
+                else
+                {
+                    CharacterStates[i].SetActive(false);
+                }
+            }
+        }
     }
     /*
     public void SetStateDamaged()
