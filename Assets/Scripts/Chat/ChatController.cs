@@ -22,7 +22,7 @@ public class ChatController
 
     public void AddChat(TeamMateClass senderClass, string message)
     {
-        ChatItem newChat = Instantiate(senderClass, message);
+        ChatItem newChat = new ChatItem(senderClass, message);
         chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
