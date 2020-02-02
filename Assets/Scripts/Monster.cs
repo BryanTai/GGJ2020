@@ -60,6 +60,7 @@ public class Monster : Entity
 
                     // deal damage to target
                     currentTarget.Health -= (int) attackPower;
+                    currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
