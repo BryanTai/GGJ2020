@@ -140,6 +140,8 @@ public class PlayerControlsUI : MonoBehaviour
         chatWidget.transform.SetParent(chatItemParent);
         chatHistory.Enqueue(chatWidget);
 
+        //This code will remove excess Chat Messages
+        /*
         totalChatItems++;
         if(totalChatItems >= MAX_CHAT_ITEMS)
         {
@@ -147,6 +149,7 @@ public class PlayerControlsUI : MonoBehaviour
             ChatItemWidget toDestroy = chatHistory.Dequeue();
             Destroy(toDestroy.gameObject);
         }
+        */
     }
 
     public void SetBossHealthSlider(float healthPercentage)
