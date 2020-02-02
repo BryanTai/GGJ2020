@@ -659,7 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d546a3f567d3cdf4cb0d4465f4fe7282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectIconSE: {fileID: 6733450432379295718}
+  skillSelectSE: {fileID: 6733450432379295718}
+  skillUseSE: {fileID: 0}
   gameController: {fileID: 0}
   bossHealthSlider: {fileID: 7727866505098865662}
   skillButtons: []
