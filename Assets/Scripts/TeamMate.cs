@@ -26,6 +26,8 @@ public class TeamMate : Entity
     private int _mood;
     private int _moodFrameCounter;
 
+    private int halfHealth;
+
     public int Mood
     {
         get
@@ -81,6 +83,7 @@ public class TeamMate : Entity
     {
         base.Start();
         Health = MaxHP = gc.initValues.TeamMateMaxHP;
+        halfHealth = MaxHP / 2;
         Mood = BiggestMood = gc.initValues.TeamMateMaxMood;
         attack_prepare = false;
 
@@ -113,6 +116,7 @@ public class TeamMate : Entity
                 if (i == 2)
                 {
                     CharacterStates[i].SetActive(true);
+                    ChangeFace(TeamMateMood.WORSE);
                 }
                 else
                 {
@@ -132,6 +136,7 @@ public class TeamMate : Entity
                 if (i == 2)
                 {
                     CharacterStates[i].SetActive(true);
+                    ChangeFace(TeamMateMood.WORSE);
                 }
                 else
                 {
@@ -163,6 +168,8 @@ public class TeamMate : Entity
                         if (i == 4)
                         {
                             CharacterStates[i].SetActive(true);
+                            TeamMateMood idleMood = (Health > halfHealth) ? TeamMateMood.NEUTRAL : TeamMateMood.BAD;
+                            ChangeFace(idleMood);
                         }
                         else
                         {
@@ -184,6 +191,8 @@ public class TeamMate : Entity
                         if (i == 0)
                         {
                             CharacterStates[i].SetActive(true);
+                            TeamMateMood idleMood = (Health > halfHealth) ? TeamMateMood.NEUTRAL : TeamMateMood.BAD;
+                            ChangeFace(idleMood);
                         }
                         else
                         {
@@ -209,6 +218,7 @@ public class TeamMate : Entity
                     attack_time = 0;
                     attack_prepare = false;
                     ChangeState(ActionState.Attacking);
+                    ChangeFace(TeamMateMood.ATTACKING);
                 }
             }
         }
@@ -224,6 +234,11 @@ public class TeamMate : Entity
         }
     }
 
+    public void ChangeFace(TeamMateMood newMood)
+    {
+        gc.playerControlsUI.ChangeTeamMateButtonFace(this, newMood);
+    }
+
     public void ChangeState(ActionState new_state)
     {
         state = new_state;
@@ -236,6 +251,7 @@ public class TeamMate : Entity
                 if (i == 1)
                 {
                     CharacterStates[i].SetActive(true);
+                    ChangeFace(TeamMateMood.WORSE);
                 }
                 else
                 {
@@ -250,6 +266,7 @@ public class TeamMate : Entity
                 if (i == 3)
                 {
                     CharacterStates[i].SetActive(true);
+                    ChangeFace(TeamMateMood.ATTACKING);
                 }
                 else
                 {
@@ -264,6 +281,7 @@ public class TeamMate : Entity
                 if (i == 5)
                 {
                     CharacterStates[i].SetActive(true);
+                    ChangeFace(TeamMateMood.HAPPY);
                 }
                 else
                 {
