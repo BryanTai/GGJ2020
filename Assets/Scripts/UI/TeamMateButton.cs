@@ -7,11 +7,13 @@ public class TeamMateButton : UIButton
 {
     public Slider healthBar;
     public TeammateFaces faceReferences;
+    public TeamMateClass teamMateClass;
 
     public override void InitButton(int index)
     {
         base.InitButton(index);
         SetHealthPercentage(1f);
+        teamMateClass = (TeamMateClass) index;
         SetFaceFromType(TeammateFaces.FaceType.NEUTRAL);
     }
 

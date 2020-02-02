@@ -24,6 +24,8 @@ public class TeamMate : Entity
         }
     }
 
+    public TeamMateClass TMClass { get { return Class; } }
+
     private void Awake()
     {
        

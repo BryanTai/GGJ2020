@@ -85,8 +85,9 @@ public class PlayerControlsUI : MonoBehaviour
         }
     }
 
-    public void ChangeValue(int i)
+    public void SetTeamMateHealth(TeamMateClass tmClass, float healthPercentage)
     {
-        //
+        TeamMateButton tmButton = teamMateButtons[(int)tmClass] as TeamMateButton;
+        tmButton.SetHealthPercentage(healthPercentage);
     }
 }

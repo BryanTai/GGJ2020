@@ -59,10 +59,13 @@ public class Monster : Entity
                     SelectTarget();
 
                     // deal damage to target
-                    currentTarget.Health -= (int) attackPower; //TODO: Track health with float or int?
+                    currentTarget.Health -= (int) attackPower;
+                    float newHealthPercentage = (float)currentTarget.Health / (float)currentTarget.MaxHealth;
+                    gc.playerControlsUI.SetTeamMateHealth(currentTarget.TMClass, newHealthPercentage);
 
-                    Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
-                    Debug.Log("Monster's Health: " + health.ToString());
+                    //Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
+                    //Debug.LogFormat("Target's Health {0} MaxHP {1}", currentTarget.Health, currentTarget.MaxHealth);
+                    //Debug.Log("Monster's Health: " + health.ToString());
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
