@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        GameStarted = true;
+        GameStarted = false;
     }
 
     void Start()
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 
         convLoader = ChatController.Instance.ConvLoader;
         ChatController.Instance.AddConversation(convLoader.StartingConvo);
+        Debug.Log("Added starting convo");
     }
 
     public void setLose()

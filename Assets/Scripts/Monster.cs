@@ -70,8 +70,8 @@ public class Monster : Entity
                     currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
                     //TODO: This is an example of the ChatController adding chat stuff
-                    ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
-                        string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", (int)attackPower));
+                    //ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
+                    //    string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", (int)attackPower));
 
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHP);
