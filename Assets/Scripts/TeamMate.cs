@@ -104,6 +104,9 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
+        if (!gc.GameStarted)
+            return;
+
         if (!IsOnline && state != ActionState.Offline) // if player's offline
         {
             state = ActionState.Offline;

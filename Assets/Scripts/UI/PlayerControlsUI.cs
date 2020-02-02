@@ -28,6 +28,11 @@ public class PlayerControlsUI : MonoBehaviour
     public Transform chatItemParent;
     private int totalChatItems = 0;
     private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
+    private Queue<ChatItem> chatQueue = new Queue<ChatItem>();
+    private float chatCooldown;
+    private float timeSinceLastCooldown = 0;
+    private const float MinChatCooldown = 0.5f;
+    private const float MaxChatCooldown = 1.0f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;
@@ -77,10 +82,51 @@ public class PlayerControlsUI : MonoBehaviour
         PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
         PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
 
-        ChatController.Instance.OnChatAdded += CreateChat;
+        //ChatController.Instance.OnChatAdded += CreateChat;
+        ChatController.Instance.OnConversationAdded += AddConvoToQueue;
+        chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
 
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
+    }
+
+    private void Update()
+    {
+        DequeueChatQueue();
+    }
+
+    private void DequeueChatQueue()
+    {
+        timeSinceLastCooldown += Time.deltaTime;
+
+        if (chatQueue.Count == 0)
+        {
+            if (!gameController.GameStarted)
+            {
+                Debug.Log("Game starting");
+                gameController.GameStarted = true;
+            }
+                
+            return;
+        }
+
+        if (timeSinceLastCooldown < chatCooldown)
+            return;
+
+        ChatItem nextItem = chatQueue.Dequeue();
+        CreateChat(nextItem);
+
+        timeSinceLastCooldown = 0;
+        chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
+    }
+
+    public void AddConvoToQueue(Conversation newConvo)
+    {
+        Debug.Log("AddConvoToQueue");
+        foreach(ChatItem chatItem in newConvo.ChatItems)
+        {
+            chatQueue.Enqueue(chatItem);
+        }
     }
 
     public void CreateChat(ChatItem chatItem)
