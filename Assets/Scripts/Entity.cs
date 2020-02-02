@@ -23,6 +23,11 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public int MaxHealth
+    {
+        get { return MaxHP; }
+    }
+
     private void Awake()
     {
         

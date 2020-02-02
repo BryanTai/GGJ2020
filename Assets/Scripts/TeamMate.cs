@@ -6,6 +6,7 @@ using UnityEngine;
 public class TeamMate : Entity
 {
     [SerializeField] private int MaxMood;
+    [SerializeField] private TeamMateClass Class;
     public event Action<int> OnMoodChanged;
 
     private int _mood;
@@ -22,6 +23,8 @@ public class TeamMate : Entity
             OnMoodChanged?.Invoke(_mood);
         }
     }
+
+    public TeamMateClass TMClass { get { return Class; } }
 
     private void Awake()
     {

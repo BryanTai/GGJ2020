@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WarriorFaces
   m_EditorClassIdentifier: 
   Faces:
-  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
-  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
-  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
-  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
-  - {fileID: 21300000, guid: f141f734352229347b4cc2d5864a54c0, type: 3}
+  - {fileID: 21300000, guid: 5efbc4912073f1645b8b1b2f86548558, type: 3}
+  - {fileID: 21300000, guid: b79eec27de97ea847ae01fa24dd8a84e, type: 3}
+  - {fileID: 21300000, guid: 50011ba0f02402742ba6645b06fb9733, type: 3}
+  - {fileID: 21300000, guid: b759a13349fedfa49a5ed1e3936b369d, type: 3}
+  - {fileID: 21300000, guid: 0bc41a143f91cfb4ea212a500ad42161, type: 3}

@@ -17,8 +17,8 @@ public class Monster : Entity
     private int totalPartyMembers;
     private bool isDead;
 
-    private List<GameObject> viableTargets = new List<GameObject>();
-    private GameObject currentTarget;
+    private List<TeamMate> viableTargets = new List<TeamMate>();
+    private TeamMate currentTarget;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -48,6 +48,7 @@ public class Monster : Entity
 
             // reduce health over time, based on number of alive party members
             health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
+            gc.playerControlsUI.SetBossHealthSlider(health / MaxHP);
             // find target to attack and attack
             attackFreqTime += Time.deltaTime;
 
@@ -58,8 +59,13 @@ public class Monster : Entity
                     SelectTarget();
 
                     // deal damage to target
-                    Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
-                    Debug.Log("Monster's Health: " + health.ToString());
+                    currentTarget.Health -= (int) attackPower;
+                    float newHealthPercentage = (float)currentTarget.Health / (float)currentTarget.MaxHealth;
+                    gc.playerControlsUI.SetTeamMateHealth(currentTarget.TMClass, newHealthPercentage);
+
+                    //Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
+                    //Debug.LogFormat("Target's Health {0} MaxHP {1}", currentTarget.Health, currentTarget.MaxHealth);
+                    //Debug.Log("Monster's Health: " + health.ToString());
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
@@ -83,7 +89,7 @@ public class Monster : Entity
             if (gc.TeamMates[i].IsAlive)
             {
                 // add party member to viable targets list
-                viableTargets.Add(gc.TeamMates[i].gameObject);
+                viableTargets.Add(gc.TeamMates[i]);
                 //viableTargets[viableTargets.Count-1] = gc.TeamMates[i].gameObject;
             }
         }

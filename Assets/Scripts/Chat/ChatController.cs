@@ -17,13 +17,27 @@ public class ChatController
         }
     }
 
+    private ConversationLoader _convLoader;
+    public ConversationLoader ConvLoader
+    {
+        get
+        {
+            if(_convLoader == null)
+            {
+                _convLoader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ConversationLoader>();
+            }
+            return _convLoader;
+        }
+    }
+
     public List<ChatItem> chatHistory { get; private set; }
     public event Action<ChatItem> OnChatAdded;
 
-    public void AddChat(string senderName, string message, Color color)
+    public void AddChat(TeamMateClass senderClass, string message)
     {
-        ChatItem newChat = new ChatItem(senderName, message, color);
+        ChatItem newChat = new ChatItem(senderClass, message);
         chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
+
 }
