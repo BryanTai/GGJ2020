@@ -36,7 +36,7 @@ public class PlayerControlsUI : MonoBehaviour
         {
             SkillButton skillButton = Instantiate(skillButtonPrefab);
             skillButton.transform.SetParent(skillButtonParent, false);
-            skillButton.maxCooldownTime = gameController.Healer.GetSkillByType((SkillType) s).SkillData.CoolDown;
+            skillButton.skill = gameController.Healer.GetSkillByType((SkillType)s);
             skillButton.InitButton(s);
             skillButtons.Add(skillButton);
 
@@ -75,10 +75,8 @@ public class PlayerControlsUI : MonoBehaviour
     {
         if (gameController.SelectedSkill == null) return;
 
-        //Debug.LogFormat("Teammate {0} pressed!", index);
         gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
         selectIconSE.PlayOneShot(gameController.SelectedSkill.SkillData.skillSE);
-        StartSkillCooldown(gameController.SelectedSkill.SkillType);
         HighlightButton(teamMateButtons, index);
     }
 
@@ -89,11 +87,5 @@ public class PlayerControlsUI : MonoBehaviour
             UIButton button = allButtons[i];
             button.ToggleHighlight(i == index);
         }
-    }
-
-    public void StartSkillCooldown(SkillType skillType)
-    {
-        SkillButton skillButton = skillButtons[(int)skillType] as SkillButton;
-        skillButton.StartSkillCooldown();
     }
 }
