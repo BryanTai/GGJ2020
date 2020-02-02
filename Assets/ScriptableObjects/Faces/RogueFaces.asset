@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RogueFaces
   m_EditorClassIdentifier: 
   Faces:
-  - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
-  - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
-  - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
-  - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
-  - {fileID: 21300000, guid: 530e6f27312339249803b2811e44feb3, type: 3}
+  - {fileID: 21300000, guid: d93fb8b9ccfca83438b714b787cfc8e7, type: 3}
+  - {fileID: 21300000, guid: 72b07d10bfebc864abfc0439984b096e, type: 3}
+  - {fileID: 21300000, guid: a1508d50e755ef947a6ffb8eee34e854, type: 3}
+  - {fileID: 21300000, guid: e06154f490ecedd49b9b872deaf6a551, type: 3}
+  - {fileID: 21300000, guid: 66c1eee3845a44449844190aaa207a4a, type: 3}

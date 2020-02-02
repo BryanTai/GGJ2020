@@ -15,12 +15,9 @@ public class AoeHealSkill : Skill
 
     public override void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
-        if (!CanCast(teamMates, targetIndex))
-        {
-            return;
-        }
+        base.CastSkill(teamMates, targetIndex);
 
-        for(int i = 0; i <= teamMates.Count; ++i)
+        for (int i = 0; i <= teamMates.Count; ++i)
         {
 
             if ((i == 3 && targetIndex == 0) || (i == 0 && targetIndex == 3))
@@ -40,20 +37,10 @@ public class AoeHealSkill : Skill
             }
             
         }
-
-
-        RemainingCoolDown = SkillData.CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        if(teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0;
     }
 }

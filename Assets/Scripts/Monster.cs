@@ -63,8 +63,8 @@ public class Monster : Entity
                     float newHealthPercentage = (float)currentTarget.Health / (float)currentTarget.MaxHealth;
                     gc.playerControlsUI.SetTeamMateHealth(currentTarget.TMClass, newHealthPercentage);
 
-                    //Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
-                    //Debug.LogFormat("Target's Health {0} MaxHP {1}", currentTarget.Health, currentTarget.MaxHealth);
+                    Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
+                    Debug.LogFormat("Target's Health {0} MaxHP {1}", currentTarget.Health, currentTarget.MaxHealth);
                     //Debug.Log("Monster's Health: " + health.ToString());
                 }
                 attackFreqTime = 0f; //reset attack timer
@@ -93,8 +93,7 @@ public class Monster : Entity
             }
         }
 
-        // choose a random target among those alive
-        //currentTarget = viableTargets[Random.Range(0, viableTargets.Count - 1)];
+        //choose a random target among those alive
         currentTarget = viableTargets[Random.Range(0,viableTargets.Count-1)];
         Debug.Log("Targeted Party Member: " + currentTarget.ToString());
     }
