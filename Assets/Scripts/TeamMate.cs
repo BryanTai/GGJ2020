@@ -293,6 +293,24 @@ public class TeamMate : Entity
             }
         }
     }
+
+    public static Color GetTeamMateColor(TeamMateClass tmclass)
+    {
+        switch (tmclass)
+        {
+            case TeamMateClass.Rogue:
+                return Color.red;
+            case TeamMateClass.Paladin:
+                return new Color32(150, 146, 36, 255);
+            case TeamMateClass.Wizard:
+                return Color.blue;
+            case TeamMateClass.Warrior:
+                return new Color32(67, 9, 137, 255);
+            default:
+                return Color.white;
+        }
+    }
+
     /*
     public void SetStateDamaged()
     {

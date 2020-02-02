@@ -11,6 +11,8 @@ public class TeamMateButton : UIButton
     public TeamMateClass teamMateClass;
     [HideInInspector] public TeamMate teamMate;
 
+    public Image border;
+
     public Image moodIconImage;
     public List<Sprite> moodIcons;
 
@@ -33,6 +35,9 @@ public class TeamMateButton : UIButton
         neutralMoodThreshold = (int) (teamMate.BiggestMood * 0.50f);
         angryMoodThreshold = (int)(teamMate.BiggestMood * 0.30f);
         SetMoodIconFromMoodValue(teamMate.BiggestMood);
+
+        border.color = TeamMate.GetTeamMateColor(teamMateClass);
+        border.gameObject.SetActive(true);
     }
 
     public void SetHealth(int newHealth)

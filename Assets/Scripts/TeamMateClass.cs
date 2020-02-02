@@ -7,5 +7,5 @@ public enum TeamMateClass
     Rogue,
     Paladin,
     Wizard,
-    Warrior
+    Warrior,
 }
