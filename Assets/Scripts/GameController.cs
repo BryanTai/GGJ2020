@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     public List<TeamMate> TeamMates = new List<TeamMate>();
     public float MonsterHealthTimer;
     public float MonsterAttackFrequency;
-    public float MonsterAttackPower;
+    public float MonsterAttackPowerMin;
+    public float MonsterAttackPowerMax;
     private bool gameLose;
     private bool gameWin;
     public AudioSource backgroundMusic;
