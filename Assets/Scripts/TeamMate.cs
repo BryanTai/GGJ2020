@@ -14,7 +14,7 @@ public class TeamMate : Entity
 
     private GameController gc;
     public List<GameObject> CharacterStates = new List<GameObject>();
-    public enum ActionState {Idle, Damaged, Dead, Attacking, AttackingFinished, Cheering}
+    public enum ActionState {Idle, Damaged, Dead, Attacking, AttackingFinished, Cheering, Offline}
     //public enum MoodState { Neutral, Happy}
     private ActionState state;
     public float state_timeMax;
@@ -25,6 +25,8 @@ public class TeamMate : Entity
     private bool attack_prepare;
 
     private int _mood;
+    private int _moodFrameCounter;
+
     public int Mood
     {
         get
@@ -166,9 +168,19 @@ public class TeamMate : Entity
                     }
                 }
             }
-            
+
+            if (state == ActionState.Dead)
+            {
+                _moodFrameCounter += 1;
+                if (_moodFrameCounter == 30)
+                {
+                    Mood -= 1;
+                    _moodFrameCounter = 0;
+                }
+            }
+
             // party members attack
-            if(state == ActionState.Idle && !attack_prepare && !gc.isWon())
+            if (state == ActionState.Idle && !attack_prepare && !gc.isWon())
             {
                 attack_time = Random.Range(attack_timeMin, attack_timeMax);
                 attack_prepare = true;
