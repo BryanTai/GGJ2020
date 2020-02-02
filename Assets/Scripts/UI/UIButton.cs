@@ -19,6 +19,9 @@ public abstract class UIButton : MonoBehaviour
 
     public void ToggleHighlight(bool toggleOn)
     {
-        highlight?.SetActive(toggleOn);
+        if(highlight != null)
+        {
+            highlight.SetActive(toggleOn);
+        }
     }
 }
