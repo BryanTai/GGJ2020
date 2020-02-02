@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
     public float MonsterHealthTimer;
     public float MonsterAttackFrequency;
     public float MonsterAttackPower;
-
+    private bool gameLose;
+    private bool gameWin;
     public Canvas gameCanvas;
     [HideInInspector] public PlayerControlsUI playerControlsUI;
 
@@ -32,6 +33,26 @@ public class GameController : MonoBehaviour
         playerControlsUI.transform.SetParent(gameCanvas.transform, false);
 
         convLoader = ChatController.Instance.ConvLoader;
+    }
+
+    public void setLose()
+    {
+        gameLose = true;
+    }
+
+    public bool isLost()
+    {
+        return gameLose;
+    }
+
+    public void setWin()
+    {
+        gameWin = true;
+    }
+
+    public bool isWon()
+    {
+        return gameWin;
     }
 
     // Update is called once per frame
