@@ -231,7 +231,7 @@ public class TeamMate : Entity
             _moodFrameCounter += 1;
             if (_moodFrameCounter == 30)
             {
-                Mood -= 1;
+                Mood -= 3;
                 _moodFrameCounter = 0;
             }
         }
