@@ -188,17 +188,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: warrior attack finished
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f01eacaa4512b094ea8fbffd4613e546,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01eacaa4512b094ea8fbffd4613e546, type: 3}
 --- !u!4 &9701149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f01eacaa4512b094ea8fbffd4613e546,
-    type: 3}
-  m_PrefabInstance: {fileID: 9701148}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9701150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f01eacaa4512b094ea8fbffd4613e546,
     type: 3}
   m_PrefabInstance: {fileID: 9701148}
   m_PrefabAsset: {fileID: 0}
@@ -347,12 +346,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxMood: 100
   Class: 3
-  CharacterStates:
-  - {fileID: 279482345}
-  - {fileID: 642674970}
-  - {fileID: 1764184522}
-  - {fileID: 9701150}
-  - {fileID: 1937633953}
+  CharacterStates: []
 --- !u!1 &239688640
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,17 +508,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: warrior idol
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9725c62a90a22854a9cfe201ed5fb5d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9725c62a90a22854a9cfe201ed5fb5d8, type: 3}
 --- !u!4 &279482344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 9725c62a90a22854a9cfe201ed5fb5d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 279482343}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &279482345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 9725c62a90a22854a9cfe201ed5fb5d8,
     type: 3}
   m_PrefabInstance: {fileID: 279482343}
   m_PrefabAsset: {fileID: 0}
@@ -595,17 +588,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wizard cast
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 12a7b9dab918ba1458e71a590e376904,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12a7b9dab918ba1458e71a590e376904, type: 3}
 --- !u!4 &404701289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 12a7b9dab918ba1458e71a590e376904,
-    type: 3}
-  m_PrefabInstance: {fileID: 404701288}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &404701290 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 12a7b9dab918ba1458e71a590e376904,
     type: 3}
   m_PrefabInstance: {fileID: 404701288}
   m_PrefabAsset: {fileID: 0}
@@ -721,10 +713,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxMood: 100
   Class: 0
-  CharacterStates:
-  - {fileID: 1196074205}
-  - {fileID: 793313122}
-  - {fileID: 1045990729}
+  CharacterStates: []
 --- !u!1 &467063830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,17 +1044,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: warrior damage taken
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c72d32993b5eeeb47a2fe87c435b6f18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c72d32993b5eeeb47a2fe87c435b6f18, type: 3}
 --- !u!4 &642674969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c72d32993b5eeeb47a2fe87c435b6f18,
-    type: 3}
-  m_PrefabInstance: {fileID: 642674968}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &642674970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c72d32993b5eeeb47a2fe87c435b6f18,
     type: 3}
   m_PrefabInstance: {fileID: 642674968}
   m_PrefabAsset: {fileID: 0}
@@ -1136,17 +1124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wizard idol
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9e1f4296bfb99bb48b1095caebeb98af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1f4296bfb99bb48b1095caebeb98af, type: 3}
 --- !u!4 &724587977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 9e1f4296bfb99bb48b1095caebeb98af,
-    type: 3}
-  m_PrefabInstance: {fileID: 724587976}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &724587978 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 9e1f4296bfb99bb48b1095caebeb98af,
     type: 3}
   m_PrefabInstance: {fileID: 724587976}
   m_PrefabAsset: {fileID: 0}
@@ -1292,17 +1279,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: rouge damage taken
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6ad3e824a1559e94cbf0d1284dfd53bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad3e824a1559e94cbf0d1284dfd53bd, type: 3}
 --- !u!4 &793313121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6ad3e824a1559e94cbf0d1284dfd53bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 793313120}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &793313122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6ad3e824a1559e94cbf0d1284dfd53bd,
     type: 3}
   m_PrefabInstance: {fileID: 793313120}
   m_PrefabAsset: {fileID: 0}
@@ -1378,12 +1364,6 @@ PrefabInstance:
 --- !u!4 &824925491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 33defd0ab3cfa83408fe8e33c1e3bec1,
-    type: 3}
-  m_PrefabInstance: {fileID: 824925490}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &824925492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 33defd0ab3cfa83408fe8e33c1e3bec1,
     type: 3}
   m_PrefabInstance: {fileID: 824925490}
   m_PrefabAsset: {fileID: 0}
@@ -1546,17 +1526,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: rouge attack
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e40f0f2097406d648a3d4412710d1086,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40f0f2097406d648a3d4412710d1086, type: 3}
 --- !u!4 &1045990728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e40f0f2097406d648a3d4412710d1086,
-    type: 3}
-  m_PrefabInstance: {fileID: 1045990727}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1045990729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e40f0f2097406d648a3d4412710d1086,
     type: 3}
   m_PrefabInstance: {fileID: 1045990727}
   m_PrefabAsset: {fileID: 0}
@@ -1693,17 +1672,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: paladin attack finish
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8a6d99855a2f30c4e8dd9b5aaf04f20e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6d99855a2f30c4e8dd9b5aaf04f20e, type: 3}
 --- !u!4 &1165180254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8a6d99855a2f30c4e8dd9b5aaf04f20e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1165180253}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1165180255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8a6d99855a2f30c4e8dd9b5aaf04f20e,
     type: 3}
   m_PrefabInstance: {fileID: 1165180253}
   m_PrefabAsset: {fileID: 0}
@@ -1889,17 +1867,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: rouge idol
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4b3668628a060dc4dbc6a5364c1a7c0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3668628a060dc4dbc6a5364c1a7c0c, type: 3}
 --- !u!4 &1196074204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4b3668628a060dc4dbc6a5364c1a7c0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1196074203}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1196074205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 4b3668628a060dc4dbc6a5364c1a7c0c,
     type: 3}
   m_PrefabInstance: {fileID: 1196074203}
   m_PrefabAsset: {fileID: 0}
@@ -1970,17 +1947,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: paladin idol
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2f22842910ab3ac4983734258bdcdec5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f22842910ab3ac4983734258bdcdec5, type: 3}
 --- !u!4 &1357967070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2f22842910ab3ac4983734258bdcdec5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1357967069}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1357967071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2f22842910ab3ac4983734258bdcdec5,
     type: 3}
   m_PrefabInstance: {fileID: 1357967069}
   m_PrefabAsset: {fileID: 0}
@@ -2200,12 +2176,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1442909280}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1442909282 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 25356d908f9782f46832388a35d609e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1442909280}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1454571198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2348,17 +2318,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: paladin cast and cheer
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f004952026001fc46a32aab8ccf36bcb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f004952026001fc46a32aab8ccf36bcb, type: 3}
 --- !u!4 &1473169548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f004952026001fc46a32aab8ccf36bcb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1473169547}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1473169549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f004952026001fc46a32aab8ccf36bcb,
     type: 3}
   m_PrefabInstance: {fileID: 1473169547}
   m_PrefabAsset: {fileID: 0}
@@ -2474,10 +2443,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxMood: 100
   Class: 2
-  CharacterStates:
-  - {fileID: 724587978}
-  - {fileID: 1442909282}
-  - {fileID: 404701290}
+  CharacterStates: []
 --- !u!1001 &1764184520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2553,12 +2519,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1764184520}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1764184522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 44e7ac58e982f9e4280be687f4a74f80,
-    type: 3}
-  m_PrefabInstance: {fileID: 1764184520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1780995454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2626,17 +2586,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: paladin damage taken
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e8e12b162f540ec4a9e8b9177efa27a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e12b162f540ec4a9e8b9177efa27a5, type: 3}
 --- !u!4 &1780995455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e8e12b162f540ec4a9e8b9177efa27a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1780995454}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1780995456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e8e12b162f540ec4a9e8b9177efa27a5,
     type: 3}
   m_PrefabInstance: {fileID: 1780995454}
   m_PrefabAsset: {fileID: 0}
@@ -2707,17 +2666,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: warrior cast and cheer
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c6886052c9892c344b21445f34b014d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6886052c9892c344b21445f34b014d6, type: 3}
 --- !u!4 &1937633952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c6886052c9892c344b21445f34b014d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1937633951}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1937633953 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c6886052c9892c344b21445f34b014d6,
     type: 3}
   m_PrefabInstance: {fileID: 1937633951}
   m_PrefabAsset: {fileID: 0}
@@ -2799,13 +2757,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944630689}
-  m_LocalRotation: {x: -0.21723895, y: 0.4770281, z: -0.12296962, w: -0.84269214}
-  m_LocalPosition: {x: 30.59608, y: 20.383709, z: -20.215446}
+  m_LocalRotation: {x: -0.34878156, y: 0.4513287, z: -0.19743283, w: -0.79729176}
+  m_LocalPosition: {x: 23.1, y: 26.87, z: -25.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.786001, y: -67.964005, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.254, y: -59.027004, z: -0.001}
 --- !u!114 &1944630693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2961,9 +2919,4 @@ MonoBehaviour:
   MaxHP: 100
   MaxMood: 100
   Class: 1
-  CharacterStates:
-  - {fileID: 1357967071}
-  - {fileID: 1780995456}
-  - {fileID: 824925492}
-  - {fileID: 1165180255}
-  - {fileID: 1473169549}
+  CharacterStates: []

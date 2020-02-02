@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerControlsUI : MonoBehaviour
 {
-    public AudioSource basicHealAudioSource;
+    public AudioSource selectIconSE;
     [HideInInspector] public GameController gameController;
 
     public Slider bossHealthSlider;
@@ -66,6 +66,7 @@ public class PlayerControlsUI : MonoBehaviour
     public void OnSkillButtonPressed(int index)
     {
         //Debug.LogFormat("Skill {0} pressed!", index);
+        selectIconSE.PlayOneShot(selectIconSE.clip);
         gameController.SelectedSkill = gameController.Healer.GetSkillByType((SkillType)index);
         HighlightButton(skillButtons, index);
     }
@@ -75,8 +76,8 @@ public class PlayerControlsUI : MonoBehaviour
         if (gameController.SelectedSkill == null) return;
 
         //Debug.LogFormat("Teammate {0} pressed!", index);
-        basicHealAudioSource.PlayOneShot(basicHealAudioSource.clip);
         gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
+        selectIconSE.PlayOneShot(gameController.SelectedSkill.SkillData.skillSE);
         StartSkillCooldown(gameController.SelectedSkill.SkillType);
         HighlightButton(teamMateButtons, index);
     }

@@ -28,7 +28,7 @@ public class AoeHealSkill : Skill
 
         for (int i = 0; i < teamMates.Count; ++i)
         {
-            if(i == leftNeighbour || i == targetIndex || i == rightNeighbour && teamMates[i].IsAlive)
+            if((i == leftNeighbour || i == targetIndex || i == rightNeighbour) && teamMates[i].IsAlive)
             {
                 teamMates[i].Health += SkillData.HealAmount;
             }
