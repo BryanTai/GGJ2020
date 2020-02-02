@@ -66,9 +66,13 @@ public class TeamMateButton : UIButton
         {
             moodIconImage.sprite = moodIcons[3];
         }
-        else
+        else if(mood > 0)
         {
             moodIconImage.sprite = moodIcons[4];
+        }
+        else if (mood == 0)
+        {
+            moodIconImage.sprite = moodIcons[5];
         }
     }
 }
