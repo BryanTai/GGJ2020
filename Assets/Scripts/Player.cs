@@ -6,6 +6,12 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private List<Skill> Skills = new List<Skill>();
 
+    public List<GameObject> CharacterStates = new List<GameObject>();
+    public enum ActionState { Idle, Dead, Attacking}
+    private ActionState state;
+    public float state_timeMax;
+    private float state_time;
+
     public Skill GetSkillByType(SkillType skillType)
     {
         foreach(Skill skill in Skills)

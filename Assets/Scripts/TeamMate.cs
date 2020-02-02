@@ -11,7 +11,7 @@ public class TeamMate : Entity
     public event Action OnRageQuit;
     
     public List<GameObject> CharacterStates = new List<GameObject>();
-    public enum ActionState {Idle, Damaged, Attacking, AttackingFinished, Cheering}
+    public enum ActionState {Idle, Damaged, Dead, Attacking, AttackingFinished, Cheering}
     //public enum MoodState { Neutral, Happy}
     private ActionState state;
     public float state_timeMax;
@@ -76,53 +76,74 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
-        // play the current state (that isn't idle) for a period of time
-        if(state_time > 0)
+        if (!IsAlive && state != ActionState.Dead) // if player's dead
         {
-            state_time -= Time.deltaTime;
-        }
+            state = ActionState.Dead;
+            state_time = 0;
 
-        // swap back to idle state / second attack state
-        if(state_time <= 0 && state != ActionState.Idle)
-        {
-            // if this character is a paladin or warrior, and they aren't in the finished attacking state
-            if((Class == TeamMateClass.Paladin || Class == TeamMateClass.Warrior) && state != ActionState.AttackingFinished)
+            for (int i = 0; i < CharacterStates.Count; i++)
             {
-                state = ActionState.AttackingFinished;
-                state_time = state_timeMax;
-
-                for (int i = 0; i < CharacterStates.Count; i++)
+                if (i == 2)
                 {
-                    if (i == 3)
-                    {
-                        CharacterStates[i].SetActive(true);
-                    }
-                    else
-                    {
-                        CharacterStates[i].SetActive(false);
-                    }
+                    CharacterStates[i].SetActive(true);
                 }
-
-
-            }
-            else // reset state to idle
-            {
-                state = ActionState.Idle;
-                state_time = 0;
-
-                for (int i = 0; i < CharacterStates.Count; i++)
+                else
                 {
-                    if (i == 0)
-                    {
-                        CharacterStates[i].SetActive(true);
-                    }
-                    else
-                    {
-                        CharacterStates[i].SetActive(false);
-                    }
+                    CharacterStates[i].SetActive(false);
                 }
             }
         }
+        else if(IsAlive)
+        {
+            // play the current state (that isn't idle) for a period of time
+            if (state_time > 0)
+            {
+                state_time -= Time.deltaTime;
+            }
+
+            // swap back to idle state / second attack state
+            if (state_time <= 0 && state != ActionState.Idle)
+            {
+                // if this character is a paladin or warrior, and the are in the attacking state
+                if ((Class == TeamMateClass.Paladin || Class == TeamMateClass.Warrior) && state == ActionState.Attacking)
+                {
+                    state = ActionState.AttackingFinished;
+                    state_time = state_timeMax;
+
+                    for (int i = 0; i < CharacterStates.Count; i++)
+                    {
+                        if (i == 4)
+                        {
+                            CharacterStates[i].SetActive(true);
+                        }
+                        else
+                        {
+                            CharacterStates[i].SetActive(false);
+                        }
+                    }
+
+
+                }
+                else // reset state to idle
+                {
+                    state = ActionState.Idle;
+                    state_time = 0;
+
+                    for (int i = 0; i < CharacterStates.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            CharacterStates[i].SetActive(true);
+                        }
+                        else
+                        {
+                            CharacterStates[i].SetActive(false);
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 
     public void ChangeState(ActionState new_state)
@@ -148,7 +169,7 @@ public class TeamMate : Entity
         {
             for (int i = 0; i < CharacterStates.Count; i++)
             {
-                if (i == 2)
+                if (i == 3)
                 {
                     CharacterStates[i].SetActive(true);
                 }
@@ -162,7 +183,7 @@ public class TeamMate : Entity
         {
             for (int i = 0; i < CharacterStates.Count; i++)
             {
-                if (i == 4)
+                if (i == 5)
                 {
                     CharacterStates[i].SetActive(true);
                 }

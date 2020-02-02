@@ -361,6 +361,7 @@ MonoBehaviour:
   CharacterStates:
   - {fileID: 947945796}
   - {fileID: 1424225473}
+  - {fileID: 1242443391}
   - {fileID: 1013010952}
   - {fileID: 775818383}
   - {fileID: 1358808326}
@@ -734,6 +735,7 @@ MonoBehaviour:
   CharacterStates:
   - {fileID: 1552417551}
   - {fileID: 1783944476}
+  - {fileID: 1714141247}
   - {fileID: 183220767}
   state_timeMax: 0.5
 --- !u!1 &467063830
@@ -885,6 +887,11 @@ MonoBehaviour:
   - {fileID: 477653088}
   - {fileID: 477653087}
   - {fileID: 477653086}
+  CharacterStates:
+  - {fileID: 1714141247}
+  - {fileID: 1056642137}
+  - {fileID: 1758781303}
+  state_timeMax: 0.75
 --- !u!114 &477653086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,6 +1003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player damage taken
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 16c932f96b11fd54db18447a840eba8f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16c932f96b11fd54db18447a840eba8f, type: 3}
@@ -1608,6 +1620,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e40f0f2097406d648a3d4412710d1086,
     type: 3}
   m_PrefabInstance: {fileID: 1045990727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056642137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 384be22ff5a6ede44932ffe344dd1bed,
+    type: 3}
+  m_PrefabInstance: {fileID: 1454571198}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1089056131
 GameObject:
@@ -2535,6 +2553,7 @@ MonoBehaviour:
   CharacterStates:
   - {fileID: 698968}
   - {fileID: 1666425377}
+  - {fileID: 1714141247}
   - {fileID: 860612333}
   state_timeMax: 0.5
 --- !u!1 &1552417551 stripped
@@ -2548,6 +2567,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 25356d908f9782f46832388a35d609e4,
     type: 3}
   m_PrefabInstance: {fileID: 1442909280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1714141247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 02378d6801abc844db31c7fe8718b4ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 736970970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1758781303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 16c932f96b11fd54db18447a840eba8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 493168043}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1764184520
 PrefabInstance:
@@ -3033,6 +3064,7 @@ MonoBehaviour:
   CharacterStates:
   - {fileID: 1242443391}
   - {fileID: 489014871}
+  - {fileID: 1714141247}
   - {fileID: 740753003}
   - {fileID: 888023399}
   - {fileID: 724610738}
