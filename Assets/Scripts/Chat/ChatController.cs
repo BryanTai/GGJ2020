@@ -29,15 +29,19 @@ public class ChatController
             return _convLoader;
         }
     }
-
-    //public List<ChatItem> chatHistory { get; private set; }
+    
     public event Action<ChatItem> OnChatAdded;
+    public event Action<Conversation> OnConversationAdded;
 
     public void AddChat(TeamMateClass senderClass, string message)
     {
         ChatItem newChat = new ChatItem(senderClass, message);
-        //chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
 
+    public void AddConversation(Conversation newConvo)
+    {
+        newConvo.IsUsed = true;
+        OnConversationAdded?.Invoke(newConvo);
+    }
 }

@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public List<TeamMate> TeamMates = new List<TeamMate>();
     private bool gameLose;
     private bool gameWin;
+    public bool GameStarted { get; set; }
     public AudioSource backgroundMusic;
     public Canvas gameCanvas;
     [HideInInspector] public PlayerControlsUI playerControlsUI;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        
+        GameStarted = true;
     }
 
     void Start()
@@ -34,6 +35,7 @@ public class GameController : MonoBehaviour
         playerControlsUI.transform.SetParent(gameCanvas.transform, false);
 
         convLoader = ChatController.Instance.ConvLoader;
+        ChatController.Instance.AddConversation(convLoader.StartingConvo);
     }
 
     public void setLose()

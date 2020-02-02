@@ -43,6 +43,8 @@ public class Monster : Entity
     // Update is called once per frame
     void Update()
     {
+        if (!gc.GameStarted)
+            return;
 
         if(!isDead)
         {

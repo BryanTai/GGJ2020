@@ -28,6 +28,11 @@ public class PlayerControlsUI : MonoBehaviour
     public Transform chatItemParent;
     private int totalChatItems = 0;
     private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
+    private Queue<ChatItem> chatQueue = new Queue<ChatItem>();
+    private float chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
+    private float timeSinceLastCooldown = 0;
+    private const float MinChatCooldown = 0.5f;
+    private const float MaxChatCooldown = 1.0f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;
@@ -78,9 +83,40 @@ public class PlayerControlsUI : MonoBehaviour
         PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
 
         ChatController.Instance.OnChatAdded += CreateChat;
+        ChatController.Instance.OnConversationAdded += AddConvoToQueue;
 
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
+    }
+
+    private void Update()
+    {
+        DequeueChatQueue();
+    }
+
+    private void DequeueChatQueue()
+    {
+        timeSinceLastCooldown += Time.deltaTime;
+
+        if (chatQueue.Count == 0)
+            return;
+
+        if (timeSinceLastCooldown < chatCooldown)
+            return;
+
+        ChatItem nextItem = chatQueue.Dequeue();
+        CreateChat(nextItem);
+
+        timeSinceLastCooldown = 0;
+        chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
+    }
+
+    public void AddConvoToQueue(Conversation newConvo)
+    {
+        foreach(ChatItem chatItem in newConvo.ChatItems)
+        {
+            chatQueue.Enqueue(chatItem);
+        }
     }
 
     public void CreateChat(ChatItem chatItem)

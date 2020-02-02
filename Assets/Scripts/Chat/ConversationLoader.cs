@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ConversationLoader : MonoBehaviour
 {
-    [SerializeField] private List<Conversation> Conversations = new List<Conversation>();
+    public List<Conversation> Conversations = new List<Conversation>();
+    public Conversation StartingConvo;
     [HideInInspector] public Dictionary<ConversationId, List<Conversation>> ConversationDict = new Dictionary<ConversationId, List<Conversation>>();
 
     private void Awake()
@@ -27,5 +28,24 @@ public class ConversationLoader : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public Conversation GetRandomConvoById(ConversationId id)
+    {
+        List<Conversation> convoList = ConversationDict[id];
+
+        if (convoList == null)
+            return null;
+
+        Conversation res;
+
+        do
+        {
+            int index = Random.Range(0, convoList.Count - 1);
+            res = convoList[index];
+        }
+        while (res.IsUsed == true);
+
+        return res;
     }
 }
