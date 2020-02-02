@@ -19,8 +19,6 @@ public class TeamMateButton : UIButton
     private int neutralMoodThreshold;
     private int angryMoodThreshold;
 
-    public Text debugMoodText; //TODO REMOVE THIS
-
     public override void InitButton(int index)
     {
         SetHealth(teamMate.MaxHealth);
@@ -52,8 +50,6 @@ public class TeamMateButton : UIButton
     {
         if (moodIconImage == null) return;
         int maxMood = teamMate.BiggestMood;
-
-        debugMoodText.text = mood.ToString();
 
         if(mood == extaticMoodThreshold)
         {

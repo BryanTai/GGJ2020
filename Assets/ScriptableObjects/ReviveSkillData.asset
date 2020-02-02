@@ -15,7 +15,7 @@ MonoBehaviour:
   CoolDown: 20
   HealAmount: 20
   MoodAmount: 30
-  skillSE: {fileID: 0}
+  skillSE: {fileID: 8300000, guid: e96ec464d67576b448cdd6af2b864a0e, type: 3}
   SkillButtonReleased: {fileID: 21300000, guid: 125451247e0acc6429cf4679ec64819f,
     type: 3}
   SkillButtonPressed: {fileID: 21300000, guid: 18902816cd9ab314a875f5ba3eece6c7, type: 3}
