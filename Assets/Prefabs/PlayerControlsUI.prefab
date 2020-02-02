@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d546a3f567d3cdf4cb0d4465f4fe7282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicHealAudioSource: {fileID: 6733450432379295718}
+  selectIconSE: {fileID: 6733450432379295718}
   gameController: {fileID: 0}
   bossHealthSlider: {fileID: 7727866505098865662}
   skillButtons: []
@@ -398,7 +398,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 47bf9d292fac20547bf1e3f29c853472, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cfd8b252fb0e69b4fad942effd8bae06, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

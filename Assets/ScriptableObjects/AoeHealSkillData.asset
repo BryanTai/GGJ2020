@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoolDown: 10
   HealAmount: 30
+  MoodAmount: 0

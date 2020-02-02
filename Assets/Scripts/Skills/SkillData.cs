@@ -8,4 +8,5 @@ public class SkillData : ScriptableObject
     public int CoolDown;
     public int HealAmount;
     public int MoodAmount;
+    public AudioClip skillSE;
 }
