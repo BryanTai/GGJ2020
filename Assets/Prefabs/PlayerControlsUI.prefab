@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 448586392}
   - component: {fileID: 154631184380451575}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ChatContentParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
     m_Top: 10
     m_Bottom: 20
   m_ChildAlignment: 7
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -698,6 +698,7 @@ MonoBehaviour:
   skillSelectSE: {fileID: 6733450432379295718}
   gameController: {fileID: 0}
   bossHealthSlider: {fileID: 7727866505098865662}
+  chatItemParent: {fileID: 448586391}
   skillButtons: []
   teamMateButtons: []
   skillButtonParent: {fileID: 110658437277530851}
@@ -705,6 +706,8 @@ MonoBehaviour:
   skillButtonPrefab: {fileID: 7094723318610791819, guid: f7488d5988c89d34d8d9236b62628567,
     type: 3}
   teamMateButtonPrefab: {fileID: 399824732, guid: d327e7032597f834f805c1ff95909d94,
+    type: 3}
+  chatItemWidgetPrefab: {fileID: 3292261467384727167, guid: ca9d718d37489db42ba0d9b86d0f4361,
     type: 3}
   TeammateFacesList:
   - {fileID: 11400000, guid: fdec78684efe65e49ad4b5c0dc3be5b8, type: 2}

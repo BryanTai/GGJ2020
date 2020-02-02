@@ -25,13 +25,13 @@ public class ChatItem
                 TextColor = Color.yellow;
                 break;
             case TeamMateClass.Paladin:
-                TextColor = new Color32(232, 0, 254, 1);
+                TextColor = new Color32(232, 0, 254, 255);
                 break;
             case TeamMateClass.Wizard:
                 TextColor = Color.blue;
                 break;
             case TeamMateClass.Warrior:
-                TextColor = new Color32(139, 69, 19, 1);
+                TextColor = new Color32(139, 69, 19, 255);
                 break;
         }
     }

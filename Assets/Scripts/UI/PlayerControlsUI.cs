@@ -12,6 +12,8 @@ public class PlayerControlsUI : MonoBehaviour
 
     public Slider bossHealthSlider;
 
+    public Transform chatItemParent;
+
     [Header("Skill and Teammate Buttons")]
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
@@ -22,8 +24,12 @@ public class PlayerControlsUI : MonoBehaviour
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;
 
+    [Header("Prefab References")]
+
     public SkillButton skillButtonPrefab;
     public TeamMateButton teamMateButtonPrefab;
+
+    public ChatItemWidget chatItemWidgetPrefab;
 
     [Header("Art References")]
     public List<TeammateFaces> TeammateFacesList;
@@ -57,6 +63,15 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
+
+        ChatController.Instance.OnChatAdded += CreateChat;
+    }
+
+    public void CreateChat(ChatItem chatItem)
+    {
+        ChatItemWidget chatWidget = Instantiate(chatItemWidgetPrefab);
+        chatWidget.Init(chatItem);
+        chatWidget.transform.SetParent(chatItemParent);
     }
 
     public void SetBossHealthSlider(float healthPercentage)
