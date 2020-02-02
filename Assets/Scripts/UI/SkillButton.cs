@@ -9,6 +9,7 @@ public class SkillButton : UIButton
 
     [HideInInspector] public Skill skill;
     [HideInInspector] public int maxCooldownTime;
+    [HideInInspector] public TeamMateButton playerHealerButton;
 
     private bool isOnCooldown;
     private float time;
@@ -59,5 +60,30 @@ public class SkillButton : UIButton
     {
         uiButton.interactable = !isStarting;
         cooldownTimer.gameObject.SetActive(isStarting);
+
+        if(isStarting)
+        {
+            TeamMateMood toPlay;
+            switch (skill.SkillType){
+                case SkillType.SingleHeal:
+                    toPlay = TeamMateMood.HAPPY;
+                    break;
+                case SkillType.AoeHeal:
+                    toPlay = TeamMateMood.ATTACKING;
+                    break;
+                case SkillType.Revive:
+                    toPlay = TeamMateMood.BAD;
+                    break;
+                default:
+                    toPlay = TeamMateMood.HAPPY;
+                    break;
+            }
+
+            playerHealerButton.SetButtonImageFromMood(toPlay);
+        }
+        else
+        {
+            playerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
+        }
     }
 }

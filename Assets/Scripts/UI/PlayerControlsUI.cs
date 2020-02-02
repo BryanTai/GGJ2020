@@ -60,11 +60,16 @@ public class PlayerControlsUI : MonoBehaviour
     {
         SetBossHealthSlider(1f);
 
-        for(int s = 0; s < TOTAL_SKILLS; s++)
+        //Set the player's button image. It won't have any other functionality
+        PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
+        PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
+
+        for (int s = 0; s < TOTAL_SKILLS; s++)
         {
             SkillButton skillButton = Instantiate(skillButtonPrefab);
             skillButton.transform.SetParent(skillButtonParent, false);
             skillButton.skill = gameController.Healer.GetSkillByType((SkillType)s);
+            skillButton.playerHealerButton = PlayerHealerButton;
             skillButton.InitButton(s);
             skillButtons.Add(skillButton);
 
@@ -84,10 +89,6 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
-
-        //Set the player's button image. It won't have any other functionality
-        PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
-        PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
 
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
