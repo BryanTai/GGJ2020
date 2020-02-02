@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private List<Skill> Skills = new List<Skill>();
 
+    private GameController gc;
     public List<GameObject> CharacterStates = new List<GameObject>();
     public enum ActionState { Idle, Dead, Attacking }
     private ActionState state;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         for (int i = 0; i < CharacterStates.Count; i++)
         {
             if (i == 0)
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour
             state_time -= Time.deltaTime;
         }
 
-        if (1 == 0) // TODO: check if all other players are dead
+        if (gc.isLost()) // TODO: check if all other players are dead
         {
             state = ActionState.Dead;
             state_time = 0;

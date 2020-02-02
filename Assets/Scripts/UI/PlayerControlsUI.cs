@@ -106,19 +106,26 @@ public class PlayerControlsUI : MonoBehaviour
 
     public void OnSkillButtonPressed(int index)
     {
-        //Debug.LogFormat("Skill {0} pressed!", index);
-        gameController.SelectedSkill = gameController.Healer.GetSkillByType((SkillType)index);
-        HighlightButton(skillButtons, index);
-        skillSelectSE.PlayOneShot(skillSelectSE.clip);
+        if(!gameController.isWon() && !gameController.isLost())
+        {
+            //Debug.LogFormat("Skill {0} pressed!", index);
+            gameController.SelectedSkill = gameController.Healer.GetSkillByType((SkillType)index);
+            HighlightButton(skillButtons, index);
+            skillSelectSE.PlayOneShot(skillSelectSE.clip);
+        }
     }
 
     public void OnTeamMateButtonPressed(int index)
     {
         if (gameController.SelectedSkill == null) return;
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().AttackingState(); // set attacking state
-        gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
-        HighlightButton(teamMateButtons, index);
+        if (!gameController.isWon() && !gameController.isLost())
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().AttackingState(); // set attacking state
+            gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
+            HighlightButton(teamMateButtons, index);
+        }
+            
     }
 
     private void HighlightButton(List<UIButton> allButtons, int index)

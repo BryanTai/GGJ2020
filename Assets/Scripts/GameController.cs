@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     public void setLose()
     {
         gameLose = true;
+        playerControlsUI.LoseScreen.SetActive(true);
     }
 
     public bool isLost()
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour
     public void setWin()
     {
         gameWin = true;
+        playerControlsUI.WinScreen.SetActive(true);
     }
 
     public bool isWon()
@@ -60,6 +62,5 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
