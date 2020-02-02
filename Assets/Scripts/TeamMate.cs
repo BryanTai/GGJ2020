@@ -17,6 +17,9 @@ public class TeamMate : Entity
     private ActionState state;
     public float state_timeMax;
     private float state_time;
+    public float attack_timeMax;
+    public float attack_timeMin;
+    private float attack_time;
 
     private int _mood;
     private int _moodFrameCounter;

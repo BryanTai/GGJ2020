@@ -31,7 +31,7 @@ public class Monster : Entity
         health = MaxHP;
         attackFreq = gc.MonsterAttackFrequency;
         attackFreqTime = 0;
-        attackPower = gc.MonsterAttackPower;
+        attackPower = gc.MonsterAttackPowerMin;
         healthTimer = gc.MonsterHealthTimer;
         healthTimerInc = MaxHP / healthTimer;
         alivePartyMembers = gc.TeamMates.Count;
@@ -48,6 +48,8 @@ public class Monster : Entity
         {
             // check alive party members
             CheckAlivePartyMembers();
+            // scales monster's attack with it's % HP remaining
+            attackPower = Mathf.Lerp(gc.MonsterAttackPowerMin, gc.MonsterAttackPowerMax, health / MaxHP);
 
             // reduce health over time, based on number of alive party members
             health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
@@ -78,6 +80,11 @@ public class Monster : Entity
                     if (FlameAttackParticles.isPlaying)
                         FlameAttackParticles.Stop();
                     FlameAttackParticles.Play();
+                }
+                else if(alivePartyMembers == 0)
+                {
+                    // you lose!
+                    gc.setLose();
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
@@ -128,6 +135,7 @@ public class Monster : Entity
         // success!
         isDead = true;
         Debug.Log("Monster is dead!");
+        gc.setWin();
     }
 
     public bool IsDead()
