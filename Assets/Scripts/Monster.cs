@@ -18,6 +18,7 @@ public class Monster : Entity
     private float alivePartyMembers;
     private float totalPartyMembers;
     private bool isDead;
+    private int _monsterDamageFrameCount;
 
     private List<TeamMate> viableTargets = new List<TeamMate>();
     private TeamMate currentTarget;
@@ -36,6 +37,7 @@ public class Monster : Entity
         alivePartyMembers = gc.TeamMates.Count;
         totalPartyMembers = gc.TeamMates.Count;
         isDead = false;
+        _monsterDamageFrameCount = 0;
 
         //SelectTarget();
     }
@@ -54,7 +56,13 @@ public class Monster : Entity
             attackPower = Mathf.Lerp(gc.initValues.MonsterAttackPowerMax, gc.initValues.MonsterAttackPowerMin, monsterHealth / MaxHP);
 
             // reduce health over time, based on number of alive party members
-            monsterHealth -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
+            
+            _monsterDamageFrameCount += 1;
+            if (_monsterDamageFrameCount == 60)
+            {
+                monsterHealth -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers) * Random.Range(30.0f, 150.0f);
+                _monsterDamageFrameCount = 0;
+            }
             gc.playerControlsUI.SetBossHealthSlider(monsterHealth / MaxHP);
             // find target to attack and attack
             attackFreqTime += Time.deltaTime;
