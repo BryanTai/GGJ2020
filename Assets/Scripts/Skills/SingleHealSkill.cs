@@ -27,7 +27,7 @@ public class SingleHealSkill : Skill
         teamMates[targetIndex].Mood += SkillData.MoodAmount;
         teamMates[targetIndex].ShowHealingParticles();
 
-        for (int i = 0; i <= teamMates.Count; i++)
+        for (int i = 0; i < teamMates.Count; i++)
         {
             if (i != targetIndex)
             {
