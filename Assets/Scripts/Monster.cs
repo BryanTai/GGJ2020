@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class Monster : Entity
 {
+    [SerializeField]
+    private ParticleSystem FlameAttackParticles;
+
     private GameController gc;
     private float health;
     private float attackFreq;
@@ -65,6 +68,12 @@ public class Monster : Entity
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
                     //Debug.Log("Monster's Health: " + health.ToString());
+
+                    gameObject.transform.LookAt(currentTarget.transform);
+
+                    if (FlameAttackParticles.isPlaying)
+                        FlameAttackParticles.Stop();
+                    FlameAttackParticles.Play();
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
