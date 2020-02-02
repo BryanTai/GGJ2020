@@ -44,10 +44,11 @@ public class PlayerControlsUI : MonoBehaviour
             skillButton.uiButton.onClick.AddListener(delegate { OnSkillButtonPressed(index); });
         }
 
-        for (int t = 0; t < TOTAL_TEAMMATES; t++)
+        for (int t = 0, count = gameController.TeamMates.Count; t < count; t++)
         {
             TeamMateButton tmButton = Instantiate(teamMateButtonPrefab);
             tmButton.transform.SetParent(teamMateButtonParent, false);
+            tmButton.teamMate = gameController.TeamMates[t];
             tmButton.faceReferences = TeammateFacesList[t];
             tmButton.InitButton(t);
             teamMateButtons.Add(tmButton);
@@ -87,12 +88,6 @@ public class PlayerControlsUI : MonoBehaviour
             UIButton button = allButtons[i];
             button.ToggleHighlight(i == index);
         }
-    }
-
-    public void SetTeamMateHealth(TeamMateClass tmClass, float healthPercentage)
-    {
-        TeamMateButton tmButton = teamMateButtons[(int)tmClass] as TeamMateButton;
-        tmButton.SetHealthPercentage(healthPercentage);
     }
 
     public void StartSkillCooldown(SkillType skillType)
