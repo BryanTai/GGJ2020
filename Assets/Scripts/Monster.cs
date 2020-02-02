@@ -65,6 +65,9 @@ public class Monster : Entity
                     currentTarget.Health -= (int) attackPower;
                     currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
+                    ChatController.Instance.AddChat(currentTarget.TMClass,
+                        string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", attackPower));
+
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
                     //Debug.Log("Monster's Health: " + health.ToString());
