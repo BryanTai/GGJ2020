@@ -6,10 +6,6 @@ public class GameController : MonoBehaviour
 {   
     public Player Healer = null;
     public List<TeamMate> TeamMates = new List<TeamMate>();
-    public float MonsterHealthTimer;
-    public float MonsterAttackFrequency;
-    public float MonsterAttackPowerMin;
-    public float MonsterAttackPowerMax;
     private bool gameLose;
     private bool gameWin;
     public AudioSource backgroundMusic;
@@ -18,6 +14,9 @@ public class GameController : MonoBehaviour
 
     [Header("Prefabs")]
     public PlayerControlsUI playerUIprefab;
+
+    [Header("Starting Values Info")]
+    public StartingValues initValues;
 
     [HideInInspector] public Skill SelectedSkill = null;
     [HideInInspector] private ConversationLoader convLoader;

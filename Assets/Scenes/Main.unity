@@ -588,8 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 3
   HealingParticles: {fileID: 55736301}
   CharacterStates:
@@ -873,8 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 0
   HealingParticles: {fileID: 1103138605}
   CharacterStates:
@@ -2344,8 +2342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 0
   HealingParticles: {fileID: 0}
   CharacterStates: []
@@ -2707,7 +2704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a3af6d02e8c649beb54ea6568efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
   FlameAttackParticles: {fileID: 115442140}
 --- !u!1 &1378532438
 GameObject:
@@ -3240,8 +3236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 2
   HealingParticles: {fileID: 1384254209}
   CharacterStates:
@@ -3671,13 +3666,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944630689}
-  m_LocalRotation: {x: -0.1545843, y: 0.5284992, z: -0.09855672, w: -0.8289023}
-  m_LocalPosition: {x: 35.63428, y: 10.827164, z: -20.01179}
+  m_LocalRotation: {x: 0.3442553, y: -0.44931927, z: 0.18660428, w: 0.80298156}
+  m_LocalPosition: {x: 35.4, y: 31.94, z: -26.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 47.254, y: -59.027004, z: -0.001}
+  m_LocalEulerAnglesHint: {x: 46.1, y: -58.8, z: -0.8}
 --- !u!114 &1944630693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3696,14 +3691,11 @@ MonoBehaviour:
   - {fileID: 2089170185}
   - {fileID: 1473696459}
   - {fileID: 233016010}
-  MonsterHealthTimer: 10
-  MonsterAttackFrequency: 2
-  MonsterAttackPowerMin: 10
-  MonsterAttackPowerMax: 25
   backgroundMusic: {fileID: 1944630695}
   gameCanvas: {fileID: 1179161051}
   playerControlsUI: {fileID: 0}
   playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}
+  initValues: {fileID: 11400000, guid: 9a7ed3b730c45a344976b7320e949887, type: 2}
   SelectedSkill: {fileID: 0}
 --- !u!114 &1944630694
 MonoBehaviour:
@@ -3935,22 +3927,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.21389793
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: -0.8434699
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.4737622
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000058114523
+      value: -0.13548277
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
@@ -3960,22 +3952,27 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -59
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180.00002
+      value: -182.88
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -26.83
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: cd93671a5a50ee945a2a02b7457bcc2b,
         type: 3}
       propertyPath: m_Name
       value: hdri
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: cd93671a5a50ee945a2a02b7457bcc2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd93671a5a50ee945a2a02b7457bcc2b, type: 3}
@@ -4092,8 +4089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 1
   HealingParticles: {fileID: 1644392314}
   CharacterStates:
