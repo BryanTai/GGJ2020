@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public float MonsterAttackFrequency;
     public float MonsterAttackPower;
 
+    public AudioSource backgroundMusic;
+
     public Canvas gameCanvas;
     [HideInInspector] public PlayerControlsUI playerControlsUI;
 
