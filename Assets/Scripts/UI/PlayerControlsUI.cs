@@ -125,7 +125,13 @@ public class PlayerControlsUI : MonoBehaviour
             gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
             HighlightButton(teamMateButtons, index);
         }
-            
+    }
+
+    public void ChangeTeamMateButtonFace(TeamMate teamMate, TeamMateMood mood)
+    {
+        int index = (int)teamMate.TMClass;
+        TeamMateButton tmb = teamMateButtons[index] as TeamMateButton;
+        tmb.SetButtonImageFromMood(mood);
     }
 
     private void HighlightButton(List<UIButton> allButtons, int index)
