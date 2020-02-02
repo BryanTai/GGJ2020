@@ -32,7 +32,7 @@ public class PlayerControlsUI : MonoBehaviour
     private float chatCooldown;
     private float timeSinceLastCooldown = 0;
     private const float MinChatCooldown = 1.0f;
-    private const float MaxChatCooldown = 3.5f;
+    private const float MaxChatCooldown = 2.5f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;
