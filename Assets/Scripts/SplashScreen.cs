@@ -31,7 +31,7 @@ public class SplashScreen : MonoBehaviour
         // change direction of fade, either up or down
         if (fadeDirection && !menu_loaded)
         {
-            fadeAlpha = Mathf.Lerp(fadeAlpha, 1, fadeLerp);
+            fadeAlpha = Mathf.Lerp(fadeAlpha, 1, fadeLerp* Time.deltaTime);
             if (1-fadeAlpha < 0.0001)
             {
                 fadeAlpha = 1;
@@ -41,7 +41,7 @@ public class SplashScreen : MonoBehaviour
         }
         else if (!fadeDirection && !menu_loaded)
         {
-            fadeAlpha = Mathf.Lerp(fadeAlpha, 0, fadeLerp);
+            fadeAlpha = Mathf.Lerp(fadeAlpha, 0, fadeLerp*Time.deltaTime);
             if (fadeAlpha < 0.0001)
             {
                 fadeAlpha = 0;
