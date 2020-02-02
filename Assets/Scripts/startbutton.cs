@@ -21,4 +21,8 @@ public class startbutton : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Main");
     }
+    public void Replay()
+    {
+        SceneManager.LoadSceneAsync("SplashScreen");
+    }
 }
