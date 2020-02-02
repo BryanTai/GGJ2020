@@ -7,7 +7,7 @@ using UnityEngine;
 public class ConversationId
 {
     public TeamMateClass TriggerTarget;
-    public int TriggerMood;
+    public int TriggerHP;
 
     public override bool Equals(object value)
     {
@@ -15,14 +15,14 @@ public class ConversationId
 
         return (obj != null)
             && (TriggerTarget == obj.TriggerTarget)
-            && (TriggerMood == obj.TriggerMood);
+            && (TriggerHP == obj.TriggerHP);
     }
 
     public override int GetHashCode()
     {
         int hash = 27;
         hash = (13 * hash) + TriggerTarget.GetHashCode();
-        hash = (13 * hash) + TriggerMood.GetHashCode();
+        hash = (13 * hash) + TriggerHP.GetHashCode();
         return hash;
     }
 }
