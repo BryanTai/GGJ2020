@@ -94,7 +94,7 @@ public class Monster : Entity
         }
 
         //choose a random target among those alive
-        currentTarget = viableTargets[Random.Range(0,viableTargets.Count-1)];
+        currentTarget = viableTargets[Random.Range(0,viableTargets.Count)];
         Debug.Log("Targeted Party Member: " + currentTarget.ToString());
     }
 
