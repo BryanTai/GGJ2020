@@ -17,6 +17,19 @@ public class ChatController
         }
     }
 
+    private ConversationLoader _convLoader;
+    public ConversationLoader ConvLoader
+    {
+        get
+        {
+            if(_convLoader == null)
+            {
+                _convLoader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ConversationLoader>();
+            }
+            return _convLoader;
+        }
+    }
+
     public List<ChatItem> chatHistory { get; private set; }
     public event Action<ChatItem> OnChatAdded;
 
@@ -26,4 +39,5 @@ public class ChatController
         chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
+
 }

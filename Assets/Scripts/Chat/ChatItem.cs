@@ -14,8 +14,12 @@ public class ChatItem
     {
         SenderClass = senderClass;
         Message = message;
+        SetChatColor();
+    }
 
-        switch(senderClass)
+    public void SetChatColor()
+    {
+        switch (SenderClass)
         {
             case TeamMateClass.Rogue:
                 TextColor = Color.yellow;

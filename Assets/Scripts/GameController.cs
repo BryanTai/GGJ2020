@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public PlayerControlsUI playerUIprefab;
 
     [HideInInspector] public Skill SelectedSkill = null;
+    [HideInInspector] private ConversationLoader convLoader;
 
     private void Awake()
     {
@@ -29,6 +30,8 @@ public class GameController : MonoBehaviour
         playerControlsUI = Instantiate(playerUIprefab);
         playerControlsUI.gameController = this;
         playerControlsUI.transform.SetParent(gameCanvas.transform, false);
+
+        convLoader = ChatController.Instance.ConvLoader;
     }
 
     // Update is called once per frame
