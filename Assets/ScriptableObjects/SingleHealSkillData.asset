@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoolDown: 2
   HealAmount: 15
-  MoodAmount: 0
+  MoodAmount: 5
+  skillSE: {fileID: 0}
+  SkillButtonReleased: {fileID: 21300000, guid: 5a18f6c1fdb1b714cab6ce12c1754a60,
+    type: 3}
+  SkillButtonPressed: {fileID: 21300000, guid: 4f6a4e4a71e340943ab4a8de6ac312e1, type: 3}
