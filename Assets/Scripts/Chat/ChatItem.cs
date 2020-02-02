@@ -22,16 +22,16 @@ public class ChatItem
         switch (SenderClass)
         {
             case TeamMateClass.Rogue:
-                TextColor = Color.yellow;
+                TextColor = Color.red;
                 break;
             case TeamMateClass.Paladin:
-                TextColor = new Color32(232, 0, 254, 255);
+                TextColor = new Color32(150, 146, 36, 255);
                 break;
             case TeamMateClass.Wizard:
                 TextColor = Color.blue;
                 break;
             case TeamMateClass.Warrior:
-                TextColor = new Color32(139, 69, 19, 255);
+                TextColor = new Color32(67, 9, 137, 255);
                 break;
         }
     }
