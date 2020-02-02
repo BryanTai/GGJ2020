@@ -36,7 +36,6 @@ public class GameController : MonoBehaviour
 
         convLoader = ChatController.Instance.ConvLoader;
         ChatController.Instance.AddConversation(convLoader.StartingConvo);
-        Debug.Log("Added starting convo");
     }
 
     public void setLose()

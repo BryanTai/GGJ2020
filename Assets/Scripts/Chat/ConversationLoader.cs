@@ -29,23 +29,4 @@ public class ConversationLoader : MonoBehaviour
     {
         
     }
-
-    public Conversation GetRandomConvoById(ConversationId id)
-    {
-        List<Conversation> convoList = ConversationDict[id];
-
-        if (convoList == null)
-            return null;
-
-        Conversation res;
-
-        do
-        {
-            int index = Random.Range(0, convoList.Count - 1);
-            res = convoList[index];
-        }
-        while (res.IsUsed == true);
-
-        return res;
-    }
 }

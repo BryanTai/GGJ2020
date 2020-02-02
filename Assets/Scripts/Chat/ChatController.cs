@@ -44,4 +44,18 @@ public class ChatController
         newConvo.IsUsed = true;
         OnConversationAdded?.Invoke(newConvo);
     }
+
+
+    public void AddConvoByCondition(TeamMateClass senderClass, int triggerHP)
+    {
+        foreach(Conversation convo in ConvLoader.Conversations)
+        {
+            if (convo == null) continue;
+
+            if(convo.ID.TriggerTarget == senderClass && convo.ID.TriggerHP <= triggerHP && !convo.IsUsed)
+            {
+                AddConversation(convo);
+            }
+        }
+    }
 }

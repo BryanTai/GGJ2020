@@ -48,6 +48,13 @@ public class PlayerControlsUI : MonoBehaviour
     [Header("Art References")]
     public List<TeammateFaces> TeammateFacesList;
 
+    private void Awake()
+    {
+        //ChatController.Instance.OnChatAdded += CreateChat;
+        ChatController.Instance.OnConversationAdded += AddConvoToQueue;
+        chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,10 +89,6 @@ public class PlayerControlsUI : MonoBehaviour
         PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
         PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
 
-        //ChatController.Instance.OnChatAdded += CreateChat;
-        ChatController.Instance.OnConversationAdded += AddConvoToQueue;
-        chatCooldown = Random.Range(MinChatCooldown, MaxChatCooldown);
-
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
     }
@@ -103,7 +106,6 @@ public class PlayerControlsUI : MonoBehaviour
         {
             if (!gameController.GameStarted)
             {
-                Debug.Log("Game starting");
                 gameController.GameStarted = true;
             }
                 
@@ -122,9 +124,11 @@ public class PlayerControlsUI : MonoBehaviour
 
     public void AddConvoToQueue(Conversation newConvo)
     {
-        Debug.Log("AddConvoToQueue");
         foreach(ChatItem chatItem in newConvo.ChatItems)
         {
+            if (chatItem == null) continue;
+
+            chatItem.SetChatColor();
             chatQueue.Enqueue(chatItem);
         }
     }

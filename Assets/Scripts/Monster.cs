@@ -81,6 +81,8 @@ public class Monster : Entity
                     //ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
                     //    string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", (int)attackPower));
 
+                    ChatController.Instance.AddConvoByCondition(currentTarget.TMClass, currentTarget.Health);
+
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHP);
                     //Debug.Log("Monster's Health: " + health.ToString());
