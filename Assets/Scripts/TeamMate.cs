@@ -22,6 +22,8 @@ public class TeamMate : Entity
     private float attack_time;
 
     private int _mood;
+    private int _moodFrameCounter;
+
     public int Mood
     {
         get
@@ -89,7 +91,7 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
-        if (!IsAlive && state != ActionState.Dead) // if player's dead
+        if (!IsAlive && state != ActionState.Dead) // if the player dies
         {
             state = ActionState.Dead;
             state_time = 0;
@@ -156,7 +158,15 @@ public class TeamMate : Entity
                 }
             }
         }
-        
+        if (state == ActionState.Dead)
+        {
+            _moodFrameCounter += 1;
+            if (_moodFrameCounter == 30)
+            {
+                Mood -= 1;
+                _moodFrameCounter = 0;
+            }
+        }
     }
 
     public void ChangeState(ActionState new_state)

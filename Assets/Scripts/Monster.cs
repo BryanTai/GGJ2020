@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class Monster : Entity
 {
+    [SerializeField]
+    private ParticleSystem FlameAttackParticles;
+
     private GameController gc;
     private float health;
     private float attackFreq;
@@ -64,9 +67,19 @@ public class Monster : Entity
                     currentTarget.Health -= (int) attackPower;
                     currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
+                    //TODO: This is an example of the ChatController adding chat stuff
+                    ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
+                        string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", attackPower));
+
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
                     //Debug.Log("Monster's Health: " + health.ToString());
+
+                    gameObject.transform.LookAt(currentTarget.transform);
+
+                    if (FlameAttackParticles.isPlaying)
+                        FlameAttackParticles.Stop();
+                    FlameAttackParticles.Play();
                 }
                 else if(alivePartyMembers == 0)
                 {

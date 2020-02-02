@@ -30,13 +30,13 @@ public class ChatController
         }
     }
 
-    public List<ChatItem> chatHistory { get; private set; }
+    //public List<ChatItem> chatHistory { get; private set; }
     public event Action<ChatItem> OnChatAdded;
 
     public void AddChat(TeamMateClass senderClass, string message)
     {
         ChatItem newChat = new ChatItem(senderClass, message);
-        chatHistory.Add(newChat);
+        //chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
 

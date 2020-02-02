@@ -22,8 +22,22 @@ public class PlayerControlsUI : MonoBehaviour
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;
 
+    [Header("Chat Elements")]
+    private const int MAX_CHAT_ITEMS = 15;
+    public Transform chatItemParent;
+    private int totalChatItems = 0;
+    private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
+
+    [Header("Endgame Elements")]
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
+
+    [Header("Prefab References")]
+
     public SkillButton skillButtonPrefab;
     public TeamMateButton teamMateButtonPrefab;
+
+    public ChatItemWidget chatItemWidgetPrefab;
 
     [Header("Art References")]
     public List<TeammateFaces> TeammateFacesList;
@@ -56,6 +70,27 @@ public class PlayerControlsUI : MonoBehaviour
 
             int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
+        }
+
+        ChatController.Instance.OnChatAdded += CreateChat;
+
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
+    }
+
+    public void CreateChat(ChatItem chatItem)
+    {
+        ChatItemWidget chatWidget = Instantiate(chatItemWidgetPrefab);
+        chatWidget.Init(chatItem);
+        chatWidget.transform.SetParent(chatItemParent);
+        chatHistory.Enqueue(chatWidget);
+
+        totalChatItems++;
+        if(totalChatItems >= MAX_CHAT_ITEMS)
+        {
+            totalChatItems--;
+            ChatItemWidget toDestroy = chatHistory.Dequeue();
+            Destroy(toDestroy.gameObject);
         }
     }
 
