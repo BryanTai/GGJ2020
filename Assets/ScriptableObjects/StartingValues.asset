@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f776ccc6ecac9f4bad471582a196526, type: 3}
   m_Name: StartingValues
   m_EditorClassIdentifier: 
-  MonsterHealthTimer: 60
-  MonsterAttackFrequency: 2
-  MonsterAttackPowerMin: 5
+  MonsterHealthTimer: 120
+  MonsterAttackFrequency: 1
+  MonsterAttackPowerMin: 10
   MonsterAttackPowerMax: 25
-  MonsterMaxHP: 1000
+  MonsterMaxHP: 9999999
   TeamMateMaxHP: 100
   TeamMateMaxMood: 100

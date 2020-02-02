@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d2a5b5183c96543acd4c5519472f23, type: 3}
   m_Name: AoeHealSkillData
   m_EditorClassIdentifier: 
-  CoolDown: 10
+  CoolDown: 6
   HealAmount: 30
   MoodAmount: 10
   skillSE: {fileID: 8300000, guid: bc92776ed407c4c44a68fc48e6a531f5, type: 3}
