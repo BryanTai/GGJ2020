@@ -25,6 +25,7 @@ public class SingleHealSkill : Skill
 
         teamMates[targetIndex].Health += SkillData.HealAmount;
         teamMates[targetIndex].Mood += SkillData.MoodAmount;
+        teamMates[targetIndex].ShowHealingParticles();
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)

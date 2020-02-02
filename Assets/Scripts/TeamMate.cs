@@ -7,6 +7,7 @@ public class TeamMate : Entity
 {
     [SerializeField] private int MaxMood;
     [SerializeField] private TeamMateClass Class;
+    [SerializeField] private ParticleSystem HealingParticles;
     public event Action<int> OnMoodChanged;
     public event Action OnRageQuit;
     
@@ -42,7 +43,7 @@ public class TeamMate : Entity
 
     private void Awake()
     {
-       
+        
     }
 
     public bool IsAlive
@@ -51,6 +52,13 @@ public class TeamMate : Entity
         {
             return Health != 0 && Mood != 0;
         }
+    }
+
+    public void ShowHealingParticles()
+    {
+        if (HealingParticles.isPlaying)
+            HealingParticles.Stop();
+        HealingParticles.Play();
     }
 
     // Start is called before the first frame update
