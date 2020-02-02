@@ -12,6 +12,7 @@ public class ConversationLoader : MonoBehaviour
     {
         foreach(Conversation conv in Conversations)
         {
+            conv.IsUsed = false;
             conv.SetChatColors();
             ConversationId key = conv.ID;
             if(ConversationDict.ContainsKey(key))
