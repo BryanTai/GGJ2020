@@ -14,23 +14,28 @@ public class TeamMateButton : UIButton
     public Image moodIconImage;
     public List<Sprite> moodIcons;
 
+    private int extaticMoodThreshold;
     private int happyMoodThreshold;
     private int neutralMoodThreshold;
+    private int angryMoodThreshold;
 
     public Text debugMoodText; //TODO REMOVE THIS
 
     public override void InitButton(int index)
     {
         SetHealth(teamMate.MaxHealth);
-        SetMoodIconFromMoodValue(teamMate.BiggestMood);
+        
 
         teamMateClass = (TeamMateClass) index;
         SetButtonImageFromMood(TeamMateMood.NEUTRAL);
         teamMate.OnHealthChanged += SetHealth;
         teamMate.OnMoodChanged += SetMoodIconFromMoodValue;
 
-        happyMoodThreshold = (int) (teamMate.BiggestMood * 0.66f);
-        neutralMoodThreshold = (int) (teamMate.BiggestMood * 0.33f);
+        extaticMoodThreshold = (int)(teamMate.BiggestMood);
+        happyMoodThreshold = (int) (teamMate.BiggestMood * 0.70f);
+        neutralMoodThreshold = (int) (teamMate.BiggestMood * 0.50f);
+        angryMoodThreshold = (int)(teamMate.BiggestMood * 0.30f);
+        SetMoodIconFromMoodValue(teamMate.BiggestMood);
     }
 
     public void SetHealth(int newHealth)
@@ -49,17 +54,25 @@ public class TeamMateButton : UIButton
 
         debugMoodText.text = mood.ToString();
 
-        if(mood > happyMoodThreshold)
+        if(mood == extaticMoodThreshold)
         {
             moodIconImage.sprite = moodIcons[0];
         }
-        else if(mood > neutralMoodThreshold)
+        else if(mood > happyMoodThreshold)
         {
             moodIconImage.sprite = moodIcons[1];
         }
-        else
+        else if(mood > neutralMoodThreshold)
         {
             moodIconImage.sprite = moodIcons[2];
+        }
+        else if(mood > angryMoodThreshold)
+        {
+            moodIconImage.sprite = moodIcons[3];
+        }
+        else
+        {
+            moodIconImage.sprite = moodIcons[4];
         }
     }
 }
