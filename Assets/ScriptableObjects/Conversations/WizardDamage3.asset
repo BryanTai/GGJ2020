@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ba36eb23ae52f4da88bb9795412b2b, type: 3}
+  m_Name: WizardDamage3
+  m_EditorClassIdentifier: 
+  ID:
+    TriggerTarget: 2
+    TriggerHP: 60
+  ChatItems:
+  - SenderClass: 2
+    Message: honestly I can't believe how unbalanced these dragon mechanics are,
+      it's absolutely full of exploitable holes
+  - SenderClass: 3
+    Message: oooooooooo I wike holes :3c
+  IsUsed: 0
