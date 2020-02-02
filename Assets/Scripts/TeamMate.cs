@@ -39,6 +39,8 @@ public class TeamMate : Entity
         }
     }
 
+    public int BiggestMood { get { return MaxMood; } }
+
     public TeamMateClass TMClass { get { return Class; } }
 
     private void Awake()

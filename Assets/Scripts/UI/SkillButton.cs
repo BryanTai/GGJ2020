@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class SkillButton : UIButton
 {
     public Text cooldownTimer;
+    public AudioSource skillSe;
+
     [HideInInspector] public Skill skill;
     [HideInInspector] public int maxCooldownTime;
 
@@ -21,6 +23,7 @@ public class SkillButton : UIButton
         };
         uiButton.image.sprite = skill.SkillData.SkillButtonReleased;
         uiButton.spriteState = skillSprites;
+        skillSe.clip = skill.SkillData.skillSE;
         maxCooldownTime = skill.SkillData.CoolDown;
         skill.OnCoolDownStarted += StartSkillCooldown;
         ToggleCooldownUI(false);
@@ -29,7 +32,7 @@ public class SkillButton : UIButton
     public void StartSkillCooldown()
     {
         if (isOnCooldown) return;
-
+        skillSe.PlayOneShot(skillSe.clip);
         isOnCooldown = true;
         time = maxCooldownTime;
 

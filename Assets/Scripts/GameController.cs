@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public float MonsterAttackPower;
     private bool gameLose;
     private bool gameWin;
+    public AudioSource backgroundMusic;
     public Canvas gameCanvas;
     [HideInInspector] public PlayerControlsUI playerControlsUI;
 
