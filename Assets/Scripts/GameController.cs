@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
     public void setLose()
     {
         gameLose = true;
+        ChatController.Instance.AddConversation(convLoader.LoseConvo);
         playerControlsUI.LoseScreen.SetActive(true);
     }
 
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
     public void setWin()
     {
         gameWin = true;
+        ChatController.Instance.AddConversation(convLoader.WinConvo);
         playerControlsUI.WinScreen.SetActive(true);
     }
 

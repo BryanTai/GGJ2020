@@ -96,7 +96,8 @@ public class Monster : Entity
                 else if(alivePartyMembers == 0)
                 {
                     // you lose!
-                    gc.setLose();
+                    if(!gc.isLost())
+                        gc.setLose();
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
@@ -147,7 +148,8 @@ public class Monster : Entity
         // success!
         isDead = true;
         Debug.Log("Monster is dead!");
-        gc.setWin();
+        if(!gc.isWon())
+            gc.setWin();
     }
 
     public bool IsDead()
