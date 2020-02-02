@@ -121,7 +121,7 @@ public class Monster : Entity
         alivePartyMembers = 0;
         for (int i = 0; i < totalPartyMembers; i++)
         {
-            if (gc.TeamMates[i].IsAlive)
+            if (gc.TeamMates[i].IsAlive && gc.TeamMates[i].IsOnline)
             {
                 alivePartyMembers++;
             }
