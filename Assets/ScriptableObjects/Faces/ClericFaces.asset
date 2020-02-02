@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ClericFaces
   m_EditorClassIdentifier: 
   Faces:
-  - {fileID: 21300000, guid: ee4255cf7d5cda24da7f7dc679fe6878, type: 3}
-  - {fileID: 21300000, guid: ee4255cf7d5cda24da7f7dc679fe6878, type: 3}
-  - {fileID: 21300000, guid: ee4255cf7d5cda24da7f7dc679fe6878, type: 3}
-  - {fileID: 21300000, guid: ee4255cf7d5cda24da7f7dc679fe6878, type: 3}
-  - {fileID: 21300000, guid: ee4255cf7d5cda24da7f7dc679fe6878, type: 3}
+  - {fileID: 21300000, guid: 2b72776d3f5d03541b315d6020be4be9, type: 3}
+  - {fileID: 21300000, guid: b6ebe0214b092b840bb59d328e27492a, type: 3}
+  - {fileID: 21300000, guid: 60363cb6d2223b640bcd94cec59a2ca6, type: 3}
+  - {fileID: 21300000, guid: 60363cb6d2223b640bcd94cec59a2ca6, type: 3}
+  - {fileID: 21300000, guid: 1477035f0296e984a91994af431b077d, type: 3}
