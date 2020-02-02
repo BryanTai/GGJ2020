@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: FighterDamage2
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
-    TriggerHP: 0
-  ChatItems: []
+    TriggerTarget: 3
+    TriggerHP: 30
+  ChatItems:
+  - SenderClass: 3
+    Message: It huwts >_<. I cant take much mower. Hwelp me pweese!
   IsUsed: 0

@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: WizardDamage2
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
-    TriggerHP: 0
-  ChatItems: []
+    TriggerTarget: 2
+    TriggerHP: 30
+  ChatItems:
+  - SenderClass: 2
+    Message: I'm the mage I shouldn't be taking ANY damage, what are you all even
+      doing?
   IsUsed: 0

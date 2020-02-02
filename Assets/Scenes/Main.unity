@@ -4337,9 +4337,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Conversations:
+  - {fileID: 11400000, guid: 548ef4c95072d414588708d51711700c, type: 2}
+  - {fileID: 11400000, guid: fdba5abf30e71a4418c88550bf465c3c, type: 2}
+  - {fileID: 11400000, guid: 7f88721201a3ef74cb00ff185f7fca72, type: 2}
+  - {fileID: 11400000, guid: 75be9bfa60f82564ab5f8fa70179593a, type: 2}
+  - {fileID: 11400000, guid: 35a1ceaf260ba2f44800a09a8d1e51f8, type: 2}
+  - {fileID: 11400000, guid: db9fd813778e50a448e896859e4b1eca, type: 2}
   - {fileID: 11400000, guid: 6386a8abf6b83e1469726c4385a66f72, type: 2}
   - {fileID: 11400000, guid: 5c7dedfd94aab3144a3d16c5de34fe97, type: 2}
-  - {fileID: 11400000, guid: 548ef4c95072d414588708d51711700c, type: 2}
+  - {fileID: 11400000, guid: d3ffad768d0e8484da51b133ae99c72c, type: 2}
+  - {fileID: 11400000, guid: e0669e47b5543b34d958b48ccd963320, type: 2}
+  - {fileID: 11400000, guid: d010d3620dfc5af4f9f6f169b89d6b1f, type: 2}
+  - {fileID: 11400000, guid: d1a128f4b7e9a974dbe0757348a72677, type: 2}
   StartingConvo: {fileID: 11400000, guid: a77001b55ae8a84488fa849ff74e1bf1, type: 2}
 --- !u!82 &1944630695
 AudioSource:

@@ -15,5 +15,9 @@ MonoBehaviour:
   ID:
     TriggerTarget: 0
     TriggerHP: 0
-  ChatItems: []
+  ChatItems:
+  - SenderClass: 0
+    Message: Do Wizards have heal spells. Asking for a friend.
+  - SenderClass: 2
+    Message: "I\u2019m not your friend"
   IsUsed: 0

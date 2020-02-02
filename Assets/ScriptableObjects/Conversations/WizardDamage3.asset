@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: WizardDamage3
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
-    TriggerHP: 0
-  ChatItems: []
+    TriggerTarget: 2
+    TriggerHP: 60
+  ChatItems:
+  - SenderClass: 2
+    Message: honestly I can't believe how unbalanced these dragon mechanics are,
+      it's absolutely full of exploitable holes
+  - SenderClass: 3
+    Message: oooooooooo I wike holes :3c
   IsUsed: 0

@@ -14,6 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID:
     TriggerTarget: 0
-    TriggerMood: 0
-  ChatItems: []
+    TriggerHP: 0
+  ChatItems:
+  - SenderClass: 3
+    Message: howaaayy fiwaly we got a Cleric!!! ^w^
+  - SenderClass: 2
+    Message: oh hey
+  - SenderClass: 1
+    Message: GREETINGS!
+  - SenderClass: 2
+    Message: been a while since you've been online
+  - SenderClass: 2
+    Message: ...so you remember how to heal right? Your first ability is a single
+      targeted heal
+  - SenderClass: 2
+    Message: the second one is a weaker group heal
+  - SenderClass: 2
+    Message: 'and the third is a resurrection '
+  - SenderClass: 1
+    Message: A BLESSED SECOND CHANCE FOR US TO CONTINUE THE NOBLE FIGHT!
+  - SenderClass: 0
+    Message: u better not mess up my kdr
+  - SenderClass: 3
+    Message: OwO if pwayers start to feel rweally bad they might leave the game...
+  - SenderClass: 0
+    Message: "If anyone gets healed and I\u2019m not involved, I\u2019ll be pissed"
+  - SenderClass: 1
+    Message: INDEED, AND I AS WELL
+  - SenderClass: 3
+    Message: Dont weeve UwU
+  - SenderClass: 2
+    Message: "And if we\u2019re left dead, we are NOT staying long"
+  - SenderClass: 3
+    Message: ill make sure to roleplay in chat to kweep everwry ones spiwrits up!!
+  - SenderClass: 3
+    Message: OwO if pwayers start to feel rweally bad they might leave the game...
+  - SenderClass: 0
+    Message: omg enough with the feelings
+  - SenderClass: 0
+    Message: I want my drakeskin cosmetic cape alreaDY
+  - SenderClass: 2
+    Message: wait
+  - SenderClass: 0
+    Message: pulling
+  - SenderClass: 1
+    Message: PREPARE YOURSELVES FOR BATTLE!
+  - SenderClass: 3
+    Message: ^w^ uwyuuu~ letss goooo!
   IsUsed: 0

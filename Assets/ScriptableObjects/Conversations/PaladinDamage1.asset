@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: PaladinDamage1
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
+    TriggerTarget: 1
     TriggerHP: 0
-  ChatItems: []
+  ChatItems:
+  - SenderClass: 1
+    Message: "IF ONLY I HAD BEEN PIOUS ENOUGH TO TAKE HEALING SPELLS. BUT ALAS, MY
+      TROUBLED PAST WOULD NOT ALLOW IT\u2026"
   IsUsed: 0

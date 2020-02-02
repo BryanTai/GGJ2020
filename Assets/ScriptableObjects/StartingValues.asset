@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonsterHealthTimer: 60
   MonsterAttackFrequency: 2
-  MonsterAttackPowerMin: 5
-  MonsterAttackPowerMax: 25
+  MonsterAttackPowerMin: 20
+  MonsterAttackPowerMax: 20
   MonsterMaxHP: 1000
   TeamMateMaxHP: 100
   TeamMateMaxMood: 100

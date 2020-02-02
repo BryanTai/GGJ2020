@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08ba36eb23ae52f4da88bb9795412b2b, type: 3}
-  m_Name: RogueAngryConv1
+  m_Name: RogueDamage3
   m_EditorClassIdentifier: 
   ID:
     TriggerTarget: 0
-    TriggerMood: 10
+    TriggerHP: 60
   ChatItems:
   - SenderClass: 0
-    Message: test1
-  - SenderClass: 1
-    Message: test2
+    Message: Its fine I love to bleed
+  - SenderClass: 0
+    Message: I bleed ALL THE TIME
+  - SenderClass: 0
+    Message: Sometimes it's not even my blood
   - SenderClass: 2
-    Message: test3
-  - SenderClass: 3
-    Message: test4
+    Message: That's the dumbest thing I've ever heard
+  - SenderClass: 0
+    Message: You know the dumbest thing IVE ever heard. You
   IsUsed: 0

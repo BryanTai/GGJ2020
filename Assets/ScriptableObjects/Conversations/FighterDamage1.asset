@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: FighterDamage1
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
+    TriggerTarget: 3
     TriggerHP: 0
-  ChatItems: []
+  ChatItems:
+  - SenderClass: 3
+    Message: '    _ _ _,,..,,,,'
+  - SenderClass: 3
+    Message: "(:(\u3000\u3000\u3000\u3000)"
+  - SenderClass: 3
+    Message: " |:|\u3000\u30FB\u03C9\u30FB   |"
+  - SenderClass: 3
+    Message: "|:|\u3000 \u3000 \u3000 |"
+  - SenderClass: 3
+    Message: "  `''\uFF70---\u2010\xB4"
+  - SenderClass: 3
+    Message: We're toast...
   IsUsed: 0

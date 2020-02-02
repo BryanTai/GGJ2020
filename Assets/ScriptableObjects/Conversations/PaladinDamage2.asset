@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: PaladinDamage2
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
-    TriggerHP: 0
-  ChatItems: []
+    TriggerTarget: 1
+    TriggerHP: 30
+  ChatItems:
+  - SenderClass: 1
+    Message: "HARK, MINE FORTITUDE DOTH BE CHALLENGED\u2026 CLERIC, MIGHT THEE BESTOW
+      UPON ME A BLESSING"
   IsUsed: 0

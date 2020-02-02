@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: WizardDamage1
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
+    TriggerTarget: 2
     TriggerHP: 0
-  ChatItems: []
+  ChatItems:
+  - SenderClass: 2
+    Message: these recent patches have ruined this game, I would not have died had
+      this been 1.07
+  - SenderClass: 1
+    Message: INDEED YOUR ROBES SHALL BE REQUIRING PATCHES NOW
   IsUsed: 0
