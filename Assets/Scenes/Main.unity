@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   MaxMood: 100
+  Class: 3
 --- !u!1 &239688640
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   MaxMood: 100
+  Class: 0
 --- !u!1 &467063830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   MaxMood: 100
+  Class: 0
 --- !u!1 &1366876454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   MaxMood: 100
+  Class: 2
 --- !u!1001 &1498966818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1764,3 +1768,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   MaxMood: 100
+  Class: 1
