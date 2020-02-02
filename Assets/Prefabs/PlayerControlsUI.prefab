@@ -671,9 +671,9 @@ MonoBehaviour:
   teamMateButtonPrefab: {fileID: 399824732, guid: d327e7032597f834f805c1ff95909d94,
     type: 3}
   TeammateFacesList:
-  - {fileID: 11400000, guid: 7ff1438dfd60f8a499b10ec86102ec4b, type: 2}
-  - {fileID: 11400000, guid: d3eebb25a38b8a840bf3fc8a3418ebb1, type: 2}
   - {fileID: 11400000, guid: fdec78684efe65e49ad4b5c0dc3be5b8, type: 2}
+  - {fileID: 11400000, guid: d3eebb25a38b8a840bf3fc8a3418ebb1, type: 2}
+  - {fileID: 11400000, guid: 7ff1438dfd60f8a499b10ec86102ec4b, type: 2}
   - {fileID: 11400000, guid: 3f1281a039177fa458c063750438a137, type: 2}
 --- !u!82 &6733450432379295718
 AudioSource:
