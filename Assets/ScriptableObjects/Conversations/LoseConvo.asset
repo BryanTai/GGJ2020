@@ -13,17 +13,15 @@ MonoBehaviour:
   m_Name: LoseConvo
   m_EditorClassIdentifier: 
   ID:
-    TriggerTarget: 0
+    TriggerTarget: 3
     TriggerHP: 0
   ChatItems:
-  - SenderClass: 0
-    Message: lose1
-  - SenderClass: 0
-    Message: lose2
+  - SenderClass: 3
+    Message: waaahhhhhh!!! We lost T3T
   - SenderClass: 2
-    Message: lose3
+    Message: Damnit paladin do you even know how to tank?
   - SenderClass: 1
-    Message: lose4
+    Message: 'COMRADES, WE HAVE FAILED... '
   - SenderClass: 0
-    Message: 
+    Message: u guys r so bad, screw this im going to play minecraft
   IsUsed: 0

@@ -16,22 +16,22 @@ MonoBehaviour:
     TriggerTarget: 0
     TriggerHP: 0
   ChatItems:
-  - SenderClass: 0
-    Message: win1
-  - SenderClass: 1
-    Message: win2
-  - SenderClass: 2
-    Message: win3
   - SenderClass: 3
-    Message: win4
+    Message: "    \u2665\uFF0Fl\u3001"
+  - SenderClass: 3
+    Message: "   \uFF08\uFF9F\uFF64 \uFF61 \uFF17"
+  - SenderClass: 3
+    Message: "        l\u3001 ~\u30FD"
+  - SenderClass: 3
+    Message: " \u3000   \u3058\u3057_, )\u30CE"
+  - SenderClass: 3
+    Message: Thanks for the party!!
+  - SenderClass: 2
+    Message: "that\u2019s the first time I cleared this dungeon today. "
+  - SenderClass: 1
+    Message: OUR DEEDS OF GLORY SHALL BE SUNG FOR GENERATIONS
   - SenderClass: 0
-    Message: 
-  - SenderClass: 0
-    Message: 
-  - SenderClass: 0
-    Message: 
-  - SenderClass: 0
-    Message: 
+    Message: Where the hell is my dRAKESKIN CAPE
   - SenderClass: 0
     Message: 
   - SenderClass: 0
