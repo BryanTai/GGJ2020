@@ -4350,6 +4350,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d010d3620dfc5af4f9f6f169b89d6b1f, type: 2}
   - {fileID: 11400000, guid: d1a128f4b7e9a974dbe0757348a72677, type: 2}
   StartingConvo: {fileID: 11400000, guid: a77001b55ae8a84488fa849ff74e1bf1, type: 2}
+  WinConvo: {fileID: 11400000, guid: 720a1907ea549534097172b4be6935cf, type: 2}
+  LoseConvo: {fileID: 11400000, guid: 73da71701bf813c47a4a8a5a436c7e0a, type: 2}
 --- !u!82 &1944630695
 AudioSource:
   m_ObjectHideFlags: 0

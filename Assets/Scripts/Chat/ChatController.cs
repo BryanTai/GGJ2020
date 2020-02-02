@@ -51,9 +51,6 @@ public class ChatController
         foreach(Conversation convo in ConvLoader.Conversations)
         {
             if (convo == null) continue;
-            Debug.Log("senderClass: " + senderClass.ToString() + ", triggerHP: " + triggerHP);
-            Debug.Log("convo.ID.TriggerTarget: " + convo.ID.TriggerTarget.ToString() 
-                + ", convo.ID.TriggerHP: " + convo.ID.TriggerHP + ", convo.IsUsed: " + convo.IsUsed);
             if (convo.ID.TriggerTarget == senderClass && convo.ID.TriggerHP >= triggerHP && !convo.IsUsed)
             {
                 AddConversation(convo);
