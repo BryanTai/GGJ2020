@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PaladinFaces
   m_EditorClassIdentifier: 
   Faces:
-  - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
-  - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
-  - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
-  - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
-  - {fileID: 21300000, guid: 01f8b941bbd535944822a03aefb932eb, type: 3}
+  - {fileID: 21300000, guid: 9815dd8e1ea5bbe47b6fbec9a558c6d0, type: 3}
+  - {fileID: 21300000, guid: 977fbb43d69fa9a40ae148afe71c7b46, type: 3}
+  - {fileID: 21300000, guid: 532b34f0b3cd8fa479c23fd5324201da, type: 3}
+  - {fileID: 21300000, guid: cc46febf02b7a4d4c85dc174da3d5c17, type: 3}
+  - {fileID: 21300000, guid: ebc74231b8433904d91e6ea64d1b2500, type: 3}

@@ -12,11 +12,6 @@ public abstract class Skill : MonoBehaviour
 
     public virtual void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
-        if (!CanCast(teamMates, targetIndex))
-        {
-            return;
-        }
-
         RemainingCoolDown = SkillData.CoolDown;
     }
     public abstract bool CanCast(List<TeamMate> teamMates, int targetIndex);

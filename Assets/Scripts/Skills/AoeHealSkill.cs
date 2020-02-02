@@ -15,6 +15,10 @@ public class AoeHealSkill : Skill
 
     public override void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
+        if (!CanCast(teamMates, targetIndex))
+        {
+            return;
+        }
         base.CastSkill(teamMates, targetIndex);
 
         for (int i = 0; i <= teamMates.Count; ++i)
