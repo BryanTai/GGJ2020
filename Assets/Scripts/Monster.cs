@@ -13,8 +13,8 @@ public class Monster : Entity
     private float attackPower;
     private float healthTimer;
     private float healthTimerInc;
-    private int alivePartyMembers;
-    private int totalPartyMembers;
+    private float alivePartyMembers;
+    private float totalPartyMembers;
     private bool isDead;
 
     private List<TeamMate> viableTargets = new List<TeamMate>();

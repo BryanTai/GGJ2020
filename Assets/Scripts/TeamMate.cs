@@ -13,7 +13,7 @@ public class TeamMate : Entity
     public List<GameObject> CharacterStates = new List<GameObject>();
     public enum ActionState {Idle, Damaged, Attacking, AttackingFinished, Cheering}
     //public enum MoodState { Neutral, Happy}
-    public ActionState state;
+    private ActionState state;
     public float state_timeMax;
     private float state_time;
 
