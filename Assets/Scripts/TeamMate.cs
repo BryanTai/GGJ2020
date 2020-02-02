@@ -166,15 +166,7 @@ public class TeamMate : Entity
                 }
             }
 
-            if (state == ActionState.Dead)
-            {
-                _moodFrameCounter += 1;
-                if (_moodFrameCounter == 30)
-                {
-                    Mood -= 1;
-                    _moodFrameCounter = 0;
-                }
-            }
+            
 
             // party members attack
             if (state == ActionState.Idle && !attack_prepare && !gc.isWon())
@@ -193,7 +185,16 @@ public class TeamMate : Entity
                 }
             }
         }
-        
+
+        if (state == ActionState.Dead)
+        {
+            _moodFrameCounter += 1;
+            if (_moodFrameCounter == 30)
+            {
+                Mood -= 1;
+                _moodFrameCounter = 0;
+            }
+        }
     }
 
     public void ChangeState(ActionState new_state)
