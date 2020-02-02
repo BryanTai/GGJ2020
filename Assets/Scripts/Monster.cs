@@ -43,6 +43,7 @@ public class Monster : Entity
     // Update is called once per frame
     void Update()
     {
+
         if(!isDead)
         {
             // check alive party members
@@ -103,7 +104,7 @@ public class Monster : Entity
         viableTargets.Clear(); // resets viable targets
         for (int i = 0; i < totalPartyMembers; i++)
         {
-            if (gc.TeamMates[i].IsAlive)
+            if (gc.TeamMates[i].IsAlive && gc.TeamMates[i].IsOnline)
             {
                 // add party member to viable targets list
                 viableTargets.Add(gc.TeamMates[i]);
