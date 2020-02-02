@@ -1674,6 +1674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Conversations:
   - {fileID: 11400000, guid: 6386a8abf6b83e1469726c4385a66f72, type: 2}
+  - {fileID: 11400000, guid: 5c7dedfd94aab3144a3d16c5de34fe97, type: 2}
+  - {fileID: 11400000, guid: 548ef4c95072d414588708d51711700c, type: 2}
 --- !u!1 &2089170180
 GameObject:
   m_ObjectHideFlags: 0
