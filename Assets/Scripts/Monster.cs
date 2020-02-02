@@ -49,7 +49,7 @@ public class Monster : Entity
             // check alive party members
             CheckAlivePartyMembers();
             // scales monster's attack with it's % HP remaining
-            attackPower = Mathf.Lerp(gc.MonsterAttackPowerMin, gc.MonsterAttackPowerMax, health / MaxHP);
+            attackPower = Mathf.Lerp(gc.MonsterAttackPowerMax, gc.MonsterAttackPowerMin, health / MaxHP);
 
             // reduce health over time, based on number of alive party members
             health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);

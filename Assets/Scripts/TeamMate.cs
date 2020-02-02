@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TeamMate : Entity
 {
@@ -10,7 +11,8 @@ public class TeamMate : Entity
     [SerializeField] private ParticleSystem HealingParticles;
     public event Action<int> OnMoodChanged;
     public event Action OnRageQuit;
-    
+
+    private GameController gc;
     public List<GameObject> CharacterStates = new List<GameObject>();
     public enum ActionState {Idle, Damaged, Dead, Attacking, AttackingFinished, Cheering}
     //public enum MoodState { Neutral, Happy}
@@ -20,10 +22,9 @@ public class TeamMate : Entity
     public float attack_timeMax;
     public float attack_timeMin;
     private float attack_time;
+    private bool attack_prepare;
 
     private int _mood;
-    private int _moodFrameCounter;
-
     public int Mood
     {
         get
@@ -73,9 +74,11 @@ public class TeamMate : Entity
     {
         base.Start();
         Mood = MaxMood;
+        attack_prepare = false;
+        gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
 
         //initialize character states per character
-        for(int i = 0; i < CharacterStates.Count; i++)
+        for (int i = 0; i < CharacterStates.Count; i++)
         {
             if(i == 0)
             {
@@ -91,10 +94,12 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
-        if (!IsAlive && state != ActionState.Dead) // if the player dies
+        if (!IsAlive && state != ActionState.Dead) // if player's dead
         {
             state = ActionState.Dead;
             state_time = 0;
+            attack_time = 0;
+            attack_prepare = false;
 
             for (int i = 0; i < CharacterStates.Count; i++)
             {
@@ -124,6 +129,8 @@ public class TeamMate : Entity
                 {
                     state = ActionState.AttackingFinished;
                     state_time = state_timeMax;
+                    attack_time = 0;
+                    attack_prepare = false;
 
                     for (int i = 0; i < CharacterStates.Count; i++)
                     {
@@ -143,6 +150,8 @@ public class TeamMate : Entity
                 {
                     state = ActionState.Idle;
                     state_time = 0;
+                    attack_time = 0;
+                    attack_prepare = false;
 
                     for (int i = 0; i < CharacterStates.Count; i++)
                     {
@@ -157,16 +166,25 @@ public class TeamMate : Entity
                     }
                 }
             }
-        }
-        if (state == ActionState.Dead)
-        {
-            _moodFrameCounter += 1;
-            if (_moodFrameCounter == 30)
+            
+            // party members attack
+            if(state == ActionState.Idle && !attack_prepare && !gc.isWon())
             {
-                Mood -= 1;
-                _moodFrameCounter = 0;
+                attack_time = Random.Range(attack_timeMin, attack_timeMax);
+                attack_prepare = true;
+            }
+            else if (state == ActionState.Idle && attack_prepare)
+            {
+                attack_time -= Time.deltaTime;
+                if(attack_time <= 0)
+                {
+                    attack_time = 0;
+                    attack_prepare = false;
+                    ChangeState(ActionState.Attacking);
+                }
             }
         }
+        
     }
 
     public void ChangeState(ActionState new_state)

@@ -600,6 +600,8 @@ MonoBehaviour:
   - {fileID: 775818383}
   - {fileID: 1358808326}
   state_timeMax: 0.5
+  attack_timeMax: 4
+  attack_timeMin: 2
 --- !u!1 &239688640
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +977,8 @@ MonoBehaviour:
   - {fileID: 517129410}
   - {fileID: 183220767}
   state_timeMax: 0.5
+  attack_timeMax: 3
+  attack_timeMin: 1
 --- !u!1 &467063830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2375,8 @@ MonoBehaviour:
   HealingParticles: {fileID: 0}
   CharacterStates: []
   state_timeMax: 0
+  attack_timeMax: 0
+  attack_timeMin: 0
 --- !u!1001 &1196074203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2674,7 +2680,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366876454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3269,6 +3275,8 @@ MonoBehaviour:
   - {fileID: 26453752}
   - {fileID: 860612333}
   state_timeMax: 0.5
+  attack_timeMax: 3
+  attack_timeMin: 2
 --- !u!1 &1552417551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 4b3668628a060dc4dbc6a5364c1a7c0c,
@@ -3622,6 +3630,7 @@ GameObject:
   - component: {fileID: 1944630690}
   - component: {fileID: 1944630693}
   - component: {fileID: 1944630694}
+  - component: {fileID: 1944630695}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3712,10 +3721,11 @@ MonoBehaviour:
   - {fileID: 2089170185}
   - {fileID: 1473696459}
   - {fileID: 233016010}
-  MonsterHealthTimer: 60
-  MonsterAttackFrequency: 1
-  MonsterAttackPower: 10
-  backgroundMusic: {fileID: 0}
+  MonsterHealthTimer: 120
+  MonsterAttackFrequency: 2
+  MonsterAttackPowerMin: 10
+  MonsterAttackPowerMax: 25
+  backgroundMusic: {fileID: 1944630695}
   gameCanvas: {fileID: 1179161051}
   playerControlsUI: {fileID: 0}
   playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}
@@ -3736,6 +3746,102 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6386a8abf6b83e1469726c4385a66f72, type: 2}
   - {fileID: 11400000, guid: 5c7dedfd94aab3144a3d16c5de34fe97, type: 2}
   - {fileID: 11400000, guid: 548ef4c95072d414588708d51711700c, type: 2}
+--- !u!82 &1944630695
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944630689}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9ffee64eac4ec544ca7430354d1f3023, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1950261895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3954,3 +4060,5 @@ MonoBehaviour:
   - {fileID: 888023399}
   - {fileID: 724610738}
   state_timeMax: 0.5
+  attack_timeMax: 5
+  attack_timeMin: 3
