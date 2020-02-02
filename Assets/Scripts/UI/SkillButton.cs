@@ -42,7 +42,7 @@ public class SkillButton : UIButton
         ToggleCooldownUI(true);
         while(time > 0)
         {
-            cooldownTimer.text = ((int)time).ToString();
+            cooldownTimer.text = ((int)time + 1).ToString();
             time -= Time.deltaTime;
             //Debug.Log("Time " + time.ToString());
             yield return null;
