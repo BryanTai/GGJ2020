@@ -31,8 +31,8 @@ public class PlayerControlsUI : MonoBehaviour
     private Queue<ChatItem> chatQueue = new Queue<ChatItem>();
     private float chatCooldown;
     private float timeSinceLastCooldown = 0;
-    private const float MinChatCooldown = 0.5f;
-    private const float MaxChatCooldown = 1.0f;
+    private const float MinChatCooldown = 1.0f;
+    private const float MaxChatCooldown = 2.0f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;

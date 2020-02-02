@@ -52,7 +52,7 @@ public class ChatController
         {
             if (convo == null) continue;
 
-            if(convo.ID.TriggerTarget == senderClass && convo.ID.TriggerHP <= triggerHP && !convo.IsUsed)
+            if(convo.ID.TriggerTarget == senderClass && convo.ID.TriggerHP >= triggerHP && !convo.IsUsed)
             {
                 AddConversation(convo);
             }
