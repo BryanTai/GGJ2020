@@ -229,7 +229,7 @@ public class TeamMate : Entity
         if (state == ActionState.Dead)
         {
             _moodFrameCounter += 1;
-            if (_moodFrameCounter == 30)
+            if (_moodFrameCounter == 15)
             {
                 Mood -= 2;
                 _moodFrameCounter = 0;

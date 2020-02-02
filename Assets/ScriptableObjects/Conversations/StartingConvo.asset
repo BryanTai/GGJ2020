@@ -48,7 +48,7 @@ MonoBehaviour:
   - SenderClass: 3
     Message: ill make sure to roleplay in chat to kweep everwry ones spiwrits up!!
   - SenderClass: 3
-    Message: OwO if pwayers start to feel rweally bad they might leave the game...
+    Message: "(*\uFFE3\u25BD\uFFE3)b"
   - SenderClass: 0
     Message: omg enough with the feelings
   - SenderClass: 0
@@ -61,4 +61,4 @@ MonoBehaviour:
     Message: PREPARE YOURSELVES FOR BATTLE!
   - SenderClass: 3
     Message: ^w^ uwyuuu~ letss goooo!
-  IsUsed: 0
+  IsUsed: 1
