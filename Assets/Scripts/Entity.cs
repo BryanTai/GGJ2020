@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
 {
     [SerializeField] protected int MaxHP;
     public event Action<int> OnHealthChanged;
+    public event Action OnDead;
 
     private int _health;
     public int Health
@@ -23,6 +24,9 @@ public class Entity : MonoBehaviour
 
             if (oldHealth != _health)
                 OnHealthChanged?.Invoke(_health);
+
+            if (_health == 0)
+                OnDead?.Invoke();
         }
     }
 

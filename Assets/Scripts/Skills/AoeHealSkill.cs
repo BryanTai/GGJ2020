@@ -21,30 +21,26 @@ public class AoeHealSkill : Skill
         }
         base.CastSkill(teamMates, targetIndex);
 
-        for (int i = 0; i <= teamMates.Count; ++i)
-        {
+        int leftNeighbour = (targetIndex - 1) % teamMates.Count;
+        leftNeighbour = leftNeighbour < 0 ? teamMates.Count + leftNeighbour : leftNeighbour;
+        int rightNeighbour = (targetIndex + 1) % teamMates.Count;
+        rightNeighbour = rightNeighbour < 0 ? teamMates.Count + rightNeighbour : rightNeighbour;
 
-            if ((i == 3 && targetIndex == 0) || (i == 0 && targetIndex == 3))
+        for (int i = 0; i < teamMates.Count; ++i)
+        {
+            if(i == leftNeighbour || i == targetIndex || i == rightNeighbour && teamMates[i].IsAlive)
             {
-                if (!teamMates[i].IsAlive) continue;
                 teamMates[i].Health += SkillData.HealAmount;
             }
-            else if (i == targetIndex || i == (targetIndex - 1) || i == (targetIndex + 1))
+            else if(teamMates[i].IsAlive)
             {
-                if (!teamMates[i].IsAlive) continue;
-                teamMates[i].Health += SkillData.HealAmount;
-            }
-            else
-            {
-                if (!teamMates[i].IsAlive) continue;
                 teamMates[i].Mood -= SkillData.MoodAmount;
             }
-            
         }
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        return teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0;
+        return teamMates[targetIndex].IsAlive && this.RemainingCoolDown == 0;
     }
 }
