@@ -29,10 +29,10 @@ public class Monster : Entity
         // Grab Variables
         gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         health = MaxHP;
-        attackFreq = gc.MonsterAttackFrequency;
+        attackFreq = gc.initValues.MonsterAttackFrequency;
         attackFreqTime = 0;
-        attackPower = gc.MonsterAttackPowerMin;
-        healthTimer = gc.MonsterHealthTimer;
+        attackPower = gc.initValues.MonsterAttackPowerMin;
+        healthTimer = gc.initValues.MonsterHealthTimer;
         healthTimerInc = MaxHP / healthTimer;
         alivePartyMembers = gc.TeamMates.Count;
         totalPartyMembers = gc.TeamMates.Count;
@@ -49,7 +49,7 @@ public class Monster : Entity
             // check alive party members
             CheckAlivePartyMembers();
             // scales monster's attack with it's % HP remaining
-            attackPower = Mathf.Lerp(gc.MonsterAttackPowerMax, gc.MonsterAttackPowerMin, health / MaxHP);
+            attackPower = Mathf.Lerp(gc.initValues.MonsterAttackPowerMax, gc.initValues.MonsterAttackPowerMin, health / MaxHP);
 
             // reduce health over time, based on number of alive party members
             health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
@@ -69,7 +69,7 @@ public class Monster : Entity
 
                     //TODO: This is an example of the ChatController adding chat stuff
                     ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
-                        string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", attackPower));
+                        string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", (int)attackPower));
 
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
