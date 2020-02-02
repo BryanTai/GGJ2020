@@ -31,6 +31,7 @@ public class AoeHealSkill : Skill
             if((i == leftNeighbour || i == targetIndex || i == rightNeighbour) && teamMates[i].IsAlive)
             {
                 teamMates[i].Health += SkillData.HealAmount;
+                teamMates[i].ShowHealingParticles();
             }
             else if(teamMates[i].IsAlive)
             {
