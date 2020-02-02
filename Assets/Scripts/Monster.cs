@@ -85,7 +85,6 @@ public class Monster : Entity
         viableTargets.Clear(); // resets viable targets
         for (int i = 0; i < totalPartyMembers; i++)
         {
-            
             if (gc.TeamMates[i].IsAlive)
             {
                 // add party member to viable targets list
@@ -96,7 +95,7 @@ public class Monster : Entity
 
         // choose a random target among those alive
         //currentTarget = viableTargets[Random.Range(0, viableTargets.Count - 1)];
-        currentTarget = viableTargets[0];
+        currentTarget = viableTargets[Random.Range(0,viableTargets.Count-1)];
         Debug.Log("Targeted Party Member: " + currentTarget.ToString());
     }
 
