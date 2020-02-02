@@ -786,7 +786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RPG HEALER SIMULATOR 2020
+  m_Text: "RPG SUPPORT \nSIMULATOR 2020"
 --- !u!222 &1088551082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -895,7 +895,7 @@ MonoBehaviour:
   hideo: {fileID: 2078847065}
   team: {fileID: 115106165}
   menu: {fileID: 652886449}
-  fadeLerp: 0.025
+  fadeLerp: 6
 --- !u!1 &1157041472
 GameObject:
   m_ObjectHideFlags: 0
