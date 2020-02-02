@@ -57,7 +57,15 @@ public class TeamMate : Entity
     {
         get
         {
-            return Health != 0 && Mood != 0;
+            return Health != 0;
+        }
+    }
+
+    public bool IsOnline
+    {
+        get
+        {
+            return Mood != 0;
         }
     }
 
@@ -93,7 +101,26 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
-        if (!IsAlive && state != ActionState.Dead) // if player's dead
+        if (!IsOnline && state != ActionState.Offline) // if player's offline
+        {
+            state = ActionState.Offline;
+            state_time = 0;
+            attack_time = 0;
+            attack_prepare = false;
+
+            for (int i = 0; i < CharacterStates.Count; i++)
+            {
+                if (i == 2)
+                {
+                    CharacterStates[i].SetActive(true);
+                }
+                else
+                {
+                    CharacterStates[i].SetActive(false);
+                }
+            }
+        }
+        else if (!IsAlive && state != ActionState.Dead) // if player's dead
         {
             state = ActionState.Dead;
             state_time = 0;
