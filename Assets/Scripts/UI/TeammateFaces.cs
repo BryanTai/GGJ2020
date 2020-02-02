@@ -2,21 +2,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/TeammateFaces", order = 1)]
-public class TeammateFaces : ScriptableObject
+public partial class TeammateFaces : ScriptableObject
 {
-    [SerializeField]
-    public enum FaceType
-    {
-        ATTACKING,
-        HAPPY,
-        BAD,
-        WORSE,
-        NEUTRAL,
-    }
-
     public Sprite[] Faces;
-
-    public Sprite GetFaceForFaceType(FaceType type)
+    public Sprite GetFaceForMood(TeamMateMood type)
     {
         return Faces[(int)type];
     }
