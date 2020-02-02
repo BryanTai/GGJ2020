@@ -231,7 +231,7 @@ public class TeamMate : Entity
             _moodFrameCounter += 1;
             if (_moodFrameCounter == 30)
             {
-                Mood -= 1;
+                Mood -= 2;
                 _moodFrameCounter = 0;
             }
         }
@@ -301,7 +301,7 @@ public class TeamMate : Entity
             case TeamMateClass.Rogue:
                 return Color.red;
             case TeamMateClass.Paladin:
-                return new Color32(150, 146, 36, 255);
+                return Color.black;
             case TeamMateClass.Wizard:
                 return Color.blue;
             case TeamMateClass.Warrior:

@@ -32,7 +32,7 @@ public class PlayerControlsUI : MonoBehaviour
     private float chatCooldown;
     private float timeSinceLastCooldown = 0;
     private const float MinChatCooldown = 1.0f;
-    private const float MaxChatCooldown = 3.5f;
+    private const float MaxChatCooldown = 2.5f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;
@@ -140,6 +140,8 @@ public class PlayerControlsUI : MonoBehaviour
         chatWidget.transform.SetParent(chatItemParent);
         chatHistory.Enqueue(chatWidget);
 
+        //This code will remove excess Chat Messages
+        /*
         totalChatItems++;
         if(totalChatItems >= MAX_CHAT_ITEMS)
         {
@@ -147,6 +149,7 @@ public class PlayerControlsUI : MonoBehaviour
             ChatItemWidget toDestroy = chatHistory.Dequeue();
             Destroy(toDestroy.gameObject);
         }
+        */
     }
 
     public void SetBossHealthSlider(float healthPercentage)
