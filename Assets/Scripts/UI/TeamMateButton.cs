@@ -50,6 +50,7 @@ public class TeamMateButton : UIButton
 
     public void SetMoodIconFromMoodValue(int mood)
     {
+        if (moodIconImage == null) return;
         int maxMood = teamMate.BiggestMood;
 
         debugMoodText.text = mood.ToString();

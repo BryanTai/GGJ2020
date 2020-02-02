@@ -11,8 +11,7 @@ public class PlayerControlsUI : MonoBehaviour
     [HideInInspector] public GameController gameController;
 
     public Slider bossHealthSlider;
-
-    public Transform chatItemParent;
+    public TeamMateButton PlayerHealerButton;
 
     [Header("Skill and Teammate Buttons")]
     public const int TOTAL_SKILLS = 3;
@@ -23,6 +22,16 @@ public class PlayerControlsUI : MonoBehaviour
 
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;
+
+    [Header("Chat Elements")]
+    private const int MAX_CHAT_ITEMS = 15;
+    public Transform chatItemParent;
+    private int totalChatItems = 0;
+    private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
+
+    [Header("Endgame Elements")]
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
 
     [Header("Prefab References")]
 
@@ -64,7 +73,14 @@ public class PlayerControlsUI : MonoBehaviour
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
 
+        //Set the player's button image. It won't have any other functionality
+        PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
+        PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
+
         ChatController.Instance.OnChatAdded += CreateChat;
+
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
     }
 
     public void CreateChat(ChatItem chatItem)
@@ -72,6 +88,15 @@ public class PlayerControlsUI : MonoBehaviour
         ChatItemWidget chatWidget = Instantiate(chatItemWidgetPrefab);
         chatWidget.Init(chatItem);
         chatWidget.transform.SetParent(chatItemParent);
+        chatHistory.Enqueue(chatWidget);
+
+        totalChatItems++;
+        if(totalChatItems >= MAX_CHAT_ITEMS)
+        {
+            totalChatItems--;
+            ChatItemWidget toDestroy = chatHistory.Dequeue();
+            Destroy(toDestroy.gameObject);
+        }
     }
 
     public void SetBossHealthSlider(float healthPercentage)

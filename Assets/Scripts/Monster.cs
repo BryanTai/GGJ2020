@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class Monster : Entity
 {
+    [SerializeField]
+    private ParticleSystem FlameAttackParticles;
+
     private GameController gc;
     private float health;
     private float attackFreq;
@@ -28,7 +31,7 @@ public class Monster : Entity
         health = MaxHP;
         attackFreq = gc.MonsterAttackFrequency;
         attackFreqTime = 0;
-        attackPower = gc.MonsterAttackPower;
+        attackPower = gc.MonsterAttackPowerMin;
         healthTimer = gc.MonsterHealthTimer;
         healthTimerInc = MaxHP / healthTimer;
         alivePartyMembers = gc.TeamMates.Count;
@@ -45,6 +48,8 @@ public class Monster : Entity
         {
             // check alive party members
             CheckAlivePartyMembers();
+            // scales monster's attack with it's % HP remaining
+            attackPower = Mathf.Lerp(gc.MonsterAttackPowerMin, gc.MonsterAttackPowerMax, health / MaxHP);
 
             // reduce health over time, based on number of alive party members
             health -= Time.deltaTime * healthTimerInc * (alivePartyMembers / totalPartyMembers);
@@ -62,12 +67,24 @@ public class Monster : Entity
                     currentTarget.Health -= (int) attackPower;
                     currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
-                    ChatController.Instance.AddChat(currentTarget.TMClass,
+                    //TODO: This is an example of the ChatController adding chat stuff
+                    ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
                         string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", attackPower));
 
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
                     Debug.LogFormat("{0}'s Health {1} MaxHP {2}", currentTarget.ToString(), currentTarget.Health, currentTarget.MaxHealth);
                     //Debug.Log("Monster's Health: " + health.ToString());
+
+                    gameObject.transform.LookAt(currentTarget.transform);
+
+                    if (FlameAttackParticles.isPlaying)
+                        FlameAttackParticles.Stop();
+                    FlameAttackParticles.Play();
+                }
+                else if(alivePartyMembers == 0)
+                {
+                    // you lose!
+                    gc.setLose();
                 }
                 attackFreqTime = 0f; //reset attack timer
             }
@@ -118,6 +135,7 @@ public class Monster : Entity
         // success!
         isDead = true;
         Debug.Log("Monster is dead!");
+        gc.setWin();
     }
 
     public bool IsDead()
