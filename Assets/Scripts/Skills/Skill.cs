@@ -8,10 +8,12 @@ public abstract class Skill : MonoBehaviour
     [SerializeField] public SkillData SkillData;
     [HideInInspector] protected float RemainingCoolDown;
     public abstract SkillType SkillType { get; }
+    public event Action OnCoolDownStarted;
     public event Action OnCoolDownRefreshed;
 
     public virtual void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
+        OnCoolDownStarted?.Invoke();
         RemainingCoolDown = SkillData.CoolDown;
     }
     public abstract bool CanCast(List<TeamMate> teamMates, int targetIndex);
