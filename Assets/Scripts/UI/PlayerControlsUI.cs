@@ -11,6 +11,7 @@ public class PlayerControlsUI : MonoBehaviour
     [HideInInspector] public GameController gameController;
 
     public Slider bossHealthSlider;
+    public TeamMateButton PlayerHealerButton;
 
     [Header("Skill and Teammate Buttons")]
     public const int TOTAL_SKILLS = 3;
@@ -71,6 +72,10 @@ public class PlayerControlsUI : MonoBehaviour
             int index = t;  //Need to manually seperate the index
             tmButton.uiButton.onClick.AddListener(delegate { OnTeamMateButtonPressed(index); });
         }
+
+        //Set the player's button image. It won't have any other functionality
+        PlayerHealerButton.faceReferences = TeammateFacesList[TeammateFacesList.Count - 1];
+        PlayerHealerButton.SetButtonImageFromMood(TeamMateMood.NEUTRAL);
 
         ChatController.Instance.OnChatAdded += CreateChat;
 
