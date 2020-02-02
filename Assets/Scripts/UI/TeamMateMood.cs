@@ -7,5 +7,6 @@ public enum TeamMateMood
     BAD,
     WORSE,
     NEUTRAL,
+    DEAD
 }
 

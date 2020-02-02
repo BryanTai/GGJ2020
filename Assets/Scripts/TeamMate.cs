@@ -104,7 +104,7 @@ public class TeamMate : Entity
     // Update is called once per frame
     void Update()
     {
-        if (!gc.GameStarted)
+        if (!gc.GameStarted || (!IsOnline && state == ActionState.Offline))
             return;
 
         if (!IsOnline && state != ActionState.Offline) // if player's offline
@@ -119,7 +119,7 @@ public class TeamMate : Entity
                 if (i == 2)
                 {
                     CharacterStates[i].SetActive(true);
-                    ChangeFace(TeamMateMood.WORSE);
+                    ChangeFace(TeamMateMood.DEAD);
                 }
                 else
                 {
@@ -127,7 +127,7 @@ public class TeamMate : Entity
                 }
             }
         }
-        else if (!IsAlive && state != ActionState.Dead) // if player's dead
+        else if (!IsAlive && state != ActionState.Dead ) // if player's dead
         {
             state = ActionState.Dead;
             state_time = 0;
@@ -139,7 +139,7 @@ public class TeamMate : Entity
                 if (i == 2)
                 {
                     CharacterStates[i].SetActive(true);
-                    ChangeFace(TeamMateMood.WORSE);
+                    ChangeFace(TeamMateMood.DEAD);
                 }
                 else
                 {
@@ -229,7 +229,7 @@ public class TeamMate : Entity
         if (state == ActionState.Dead)
         {
             _moodFrameCounter += 1;
-            if (_moodFrameCounter == 15)
+            if (_moodFrameCounter == 25)
             {
                 Mood -= 2;
                 _moodFrameCounter = 0;
