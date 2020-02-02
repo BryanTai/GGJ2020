@@ -9,7 +9,8 @@ public class TeamMate : Entity
     [SerializeField] private TeamMateClass Class;
     public event Action<int> OnMoodChanged;
     public event Action OnRageQuit;
-
+    
+    public List<GameObject> CharacterStates = new List<GameObject>();
     private int _mood;
     public int Mood
     {
@@ -51,6 +52,19 @@ public class TeamMate : Entity
     {
         base.Start();
         Mood = MaxMood;
+
+        //initialize character states per character
+        for(int i = 0; i < CharacterStates.Count; i++)
+        {
+            if(i == 0)
+            {
+                CharacterStates[i].SetActive(true);
+            }
+            else
+            {
+                CharacterStates[i].SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
