@@ -6,6 +6,8 @@ public class ConversationLoader : MonoBehaviour
 {
     public List<Conversation> Conversations = new List<Conversation>();
     public Conversation StartingConvo;
+    public Conversation WinConvo;
+    public Conversation LoseConvo;
     [HideInInspector] public Dictionary<ConversationId, List<Conversation>> ConversationDict = new Dictionary<ConversationId, List<Conversation>>();
 
     private void Awake()
