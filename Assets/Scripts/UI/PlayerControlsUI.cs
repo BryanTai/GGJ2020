@@ -28,6 +28,10 @@ public class PlayerControlsUI : MonoBehaviour
     private int totalChatItems = 0;
     private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
 
+    [Header("Endgame Elements")]
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
+
     [Header("Prefab References")]
 
     public SkillButton skillButtonPrefab;
@@ -69,6 +73,9 @@ public class PlayerControlsUI : MonoBehaviour
         }
 
         ChatController.Instance.OnChatAdded += CreateChat;
+
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
     }
 
     public void CreateChat(ChatItem chatItem)
