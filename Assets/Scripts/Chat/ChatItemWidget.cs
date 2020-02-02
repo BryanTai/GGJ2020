@@ -9,7 +9,7 @@ public class ChatItemWidget : MonoBehaviour
 
     public void Init(ChatItem chatItem) 
     {
-        chatMessage.text = chatItem.Message;
+        chatMessage.text = chatItem.FullMessage;
         chatMessage.color = chatItem.TextColor;
     }
 }
