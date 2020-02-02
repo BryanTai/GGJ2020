@@ -588,8 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 3
   HealingParticles: {fileID: 55736301}
   CharacterStates:
@@ -873,8 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 0
   HealingParticles: {fileID: 1103138605}
   CharacterStates:
@@ -2344,8 +2342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 0
   HealingParticles: {fileID: 0}
   CharacterStates: []
@@ -2707,7 +2704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a3af6d02e8c649beb54ea6568efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
   FlameAttackParticles: {fileID: 115442140}
 --- !u!1 &1378532438
 GameObject:
@@ -3240,8 +3236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 2
   HealingParticles: {fileID: 1384254209}
   CharacterStates:
@@ -3696,14 +3691,11 @@ MonoBehaviour:
   - {fileID: 2089170185}
   - {fileID: 1473696459}
   - {fileID: 233016010}
-  MonsterHealthTimer: 60
-  MonsterAttackFrequency: 2
-  MonsterAttackPowerMin: 10
-  MonsterAttackPowerMax: 25
   backgroundMusic: {fileID: 1944630695}
   gameCanvas: {fileID: 1179161051}
   playerControlsUI: {fileID: 0}
   playerUIprefab: {fileID: 234298756, guid: 0082fc2314c656149b11390ec3869bb3, type: 3}
+  initValues: {fileID: 11400000, guid: 9a7ed3b730c45a344976b7320e949887, type: 2}
   SelectedSkill: {fileID: 0}
 --- !u!114 &1944630694
 MonoBehaviour:
@@ -4097,8 +4089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0baa8ed784a6a438b2d8a716a33351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
-  MaxMood: 100
+  BiggestMood: 0
   Class: 1
   HealingParticles: {fileID: 1644392314}
   CharacterStates:

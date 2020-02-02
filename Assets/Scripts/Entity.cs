@@ -5,9 +5,22 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    [SerializeField] protected int MaxHP;
+    [HideInInspector] public int MaxHP { get; protected set; }
     public event Action<int> OnHealthChanged;
     public event Action OnDead;
+
+    private GameController _gc;
+    protected GameController gc
+    {
+        get
+        {
+            if(_gc == null)
+            {
+                _gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
+            }
+            return _gc;
+        }
+    }
 
     private int _health;
     public int Health
@@ -29,26 +42,9 @@ public class Entity : MonoBehaviour
                 OnDead?.Invoke();
         }
     }
-
-    public int MaxHealth
-    {
-        get { return MaxHP; }
-    }
-
-    private void Awake()
-    {
-        
-    }
-
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        Health = MaxHP;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
     }
 }

@@ -6,13 +6,12 @@ using Random = UnityEngine.Random;
 
 public class TeamMate : Entity
 {
-    [SerializeField] private int MaxMood;
+    [HideInInspector] public int BiggestMood;
     [SerializeField] private TeamMateClass Class;
     [SerializeField] private ParticleSystem HealingParticles;
     public event Action<int> OnMoodChanged;
     public event Action OnRageQuit;
 
-    private GameController gc;
     public List<GameObject> CharacterStates = new List<GameObject>();
     public enum ActionState {Idle, Damaged, Dead, Attacking, AttackingFinished, Cheering}
     //public enum MoodState { Neutral, Happy}
@@ -34,7 +33,7 @@ public class TeamMate : Entity
         set
         {
             int oldMood = _mood;
-            _mood = Mathf.Min(MaxMood, value);
+            _mood = Mathf.Min(BiggestMood, value);
             _mood = Mathf.Max(0, _mood);
 
             if(oldMood != _mood)
@@ -44,8 +43,6 @@ public class TeamMate : Entity
                 OnRageQuit?.Invoke();
         }
     }
-
-    public int BiggestMood { get { return MaxMood; } }
 
     public TeamMateClass TMClass { get { return Class; } }
 
@@ -73,9 +70,9 @@ public class TeamMate : Entity
     protected override void Start()
     {
         base.Start();
-        Mood = MaxMood;
+        Health = MaxHP = gc.initValues.TeamMateMaxHP;
+        Mood = BiggestMood = gc.initValues.TeamMateMaxMood;
         attack_prepare = false;
-        gc = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
 
         //initialize character states per character
         for (int i = 0; i < CharacterStates.Count; i++)

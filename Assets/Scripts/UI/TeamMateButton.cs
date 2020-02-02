@@ -21,8 +21,7 @@ public class TeamMateButton : UIButton
 
     public override void InitButton(int index)
     {
-        SetHealth(teamMate.MaxHealth);
-        
+        SetHealth(teamMate.MaxHP);
 
         teamMateClass = (TeamMateClass) index;
         SetButtonImageFromMood(TeamMateMood.NEUTRAL);
@@ -38,7 +37,7 @@ public class TeamMateButton : UIButton
 
     public void SetHealth(int newHealth)
     {
-        healthBar.value = newHealth / (float) teamMate.MaxHealth;
+        healthBar.value = newHealth / (float) teamMate.MaxHP;
     }
 
     public void SetButtonImageFromMood(TeamMateMood mood)
