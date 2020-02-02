@@ -31,8 +31,8 @@ public class PlayerControlsUI : MonoBehaviour
     private Queue<ChatItem> chatQueue = new Queue<ChatItem>();
     private float chatCooldown;
     private float timeSinceLastCooldown = 0;
-    private const float MinChatCooldown = 0.5f;
-    private const float MaxChatCooldown = 1.0f;
+    private const float MinChatCooldown = 1.0f;
+    private const float MaxChatCooldown = 3.5f;
 
     [Header("Endgame Elements")]
     public GameObject WinScreen;
@@ -156,6 +156,9 @@ public class PlayerControlsUI : MonoBehaviour
 
     public void OnSkillButtonPressed(int index)
     {
+        if (!gameController.GameStarted)
+            return;
+
         if(!gameController.isWon() && !gameController.isLost())
         {
             //Debug.LogFormat("Skill {0} pressed!", index);
@@ -167,7 +170,11 @@ public class PlayerControlsUI : MonoBehaviour
 
     public void OnTeamMateButtonPressed(int index)
     {
-        if (gameController.SelectedSkill == null) return;
+        if (!gameController.GameStarted)
+            return;
+
+        if (gameController.SelectedSkill == null)
+            return;
 
         if (!gameController.isWon() && !gameController.isLost())
         {
