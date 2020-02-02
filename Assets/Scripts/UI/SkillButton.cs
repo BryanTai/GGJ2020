@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SkillButton : UIButton
 {
     public Text cooldownTimer;
-    public Skill skill;
+    [HideInInspector] public Skill skill;
     [HideInInspector] public int maxCooldownTime;
 
     private bool isOnCooldown;
@@ -13,7 +13,14 @@ public class SkillButton : UIButton
 
     public override void InitButton(int index)
     {
-        base.InitButton(index);
+        SpriteState skillSprites = new SpriteState
+        {
+            pressedSprite = skill.SkillData.SkillButtonPressed,
+            disabledSprite = skill.SkillData.SkillButtonPressed,
+            selectedSprite = skill.SkillData.SkillButtonReleased,
+        };
+        uiButton.image.sprite = skill.SkillData.SkillButtonReleased;
+        uiButton.spriteState = skillSprites;
         maxCooldownTime = skill.SkillData.CoolDown;
         skill.OnCoolDownStarted += StartSkillCooldown;
         ToggleCooldownUI(false);

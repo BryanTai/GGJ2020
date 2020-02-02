@@ -8,7 +8,6 @@ public abstract class UIButton : MonoBehaviour
 {
     public Image buttonImage;
     public GameObject highlight;
-    public List<Sprite> buttonSprites;
     public Button uiButton;
 
     private void Start()
@@ -16,10 +15,7 @@ public abstract class UIButton : MonoBehaviour
         ToggleHighlight(false);
     }
 
-    public virtual void InitButton(int index)
-    {
-        buttonImage.sprite = buttonSprites[index];
-    }
+    public abstract void InitButton(int index);
 
     public void ToggleHighlight(bool toggleOn)
     {

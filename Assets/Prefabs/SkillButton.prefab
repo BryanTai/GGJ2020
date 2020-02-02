@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a139ed3b855223c498d1100f9519ea51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a18f6c1fdb1b714cab6ce12c1754a60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -245,7 +245,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -284,10 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonImage: {fileID: 4795293395083346782}
   highlight: {fileID: 1650483514465813990}
-  buttonSprites:
-  - {fileID: 21300000, guid: a139ed3b855223c498d1100f9519ea51, type: 3}
-  - {fileID: 21300000, guid: b5bd005882f0b3b42b8b35bf3a7781cf, type: 3}
-  - {fileID: 21300000, guid: 5e3e5b10dcaad6442a509be152bd3aef, type: 3}
   uiButton: {fileID: 3503699205419073026}
   cooldownTimer: {fileID: 1238929270718041429}
+  skill: {fileID: 0}
   maxCooldownTime: 0

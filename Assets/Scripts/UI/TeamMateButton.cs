@@ -13,7 +13,6 @@ public class TeamMateButton : UIButton
 
     public override void InitButton(int index)
     {
-        base.InitButton(index);
         SetHealth(teamMate.MaxHealth);
         teamMateClass = (TeamMateClass) index;
         SetFaceFromMood(TeamMateMood.NEUTRAL);
