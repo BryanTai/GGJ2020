@@ -12,8 +12,6 @@ public class PlayerControlsUI : MonoBehaviour
 
     public Slider bossHealthSlider;
 
-    public Transform chatItemParent;
-
     [Header("Skill and Teammate Buttons")]
     public const int TOTAL_SKILLS = 3;
     public const int TOTAL_TEAMMATES = 4;
@@ -23,6 +21,12 @@ public class PlayerControlsUI : MonoBehaviour
 
     public Transform skillButtonParent;
     public Transform teamMateButtonParent;
+
+    [Header("Chat Elements")]
+    private const int MAX_CHAT_ITEMS = 15;
+    public Transform chatItemParent;
+    private int totalChatItems = 0;
+    private Queue<ChatItemWidget> chatHistory = new Queue<ChatItemWidget>();
 
     [Header("Prefab References")]
 
@@ -72,6 +76,15 @@ public class PlayerControlsUI : MonoBehaviour
         ChatItemWidget chatWidget = Instantiate(chatItemWidgetPrefab);
         chatWidget.Init(chatItem);
         chatWidget.transform.SetParent(chatItemParent);
+        chatHistory.Enqueue(chatWidget);
+
+        totalChatItems++;
+        if(totalChatItems >= MAX_CHAT_ITEMS)
+        {
+            totalChatItems--;
+            ChatItemWidget toDestroy = chatHistory.Dequeue();
+            Destroy(toDestroy.gameObject);
+        }
     }
 
     public void SetBossHealthSlider(float healthPercentage)

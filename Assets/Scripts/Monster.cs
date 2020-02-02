@@ -62,7 +62,8 @@ public class Monster : Entity
                     currentTarget.Health -= (int) attackPower;
                     currentTarget.ChangeState(TeamMate.ActionState.Damaged);
 
-                    ChatController.Instance.AddChat(currentTarget.TMClass,
+                    //TODO: This is an example of the ChatController adding chat stuff
+                    ChatController.Instance.AddChat(currentTarget.TMClass, //"OOF");
                         string.Format("OOF I HAVE TAKEN {0} DAMAGE!!! I NEED HEALING!!!", attackPower));
 
                     Debug.Log("Dealt " + attackPower.ToString() + " damage to: " + currentTarget.ToString() + "!");
