@@ -16,7 +16,7 @@ public class TeamMateButton : UIButton
         base.InitButton(index);
         SetHealth(teamMate.MaxHealth);
         teamMateClass = (TeamMateClass) index;
-        SetFaceFromType(TeammateFaces.FaceType.NEUTRAL);
+        SetFaceFromMood(TeamMateMood.NEUTRAL);
         teamMate.OnHealthChanged += SetHealth;
     }
 
@@ -25,9 +25,9 @@ public class TeamMateButton : UIButton
         healthBar.value = newHealth / (float) teamMate.MaxHealth;
     }
 
-    public void SetFaceFromType(TeammateFaces.FaceType type)
+    public void SetFaceFromMood(TeamMateMood mood)
     {
-        uiButton.image.sprite = faceReferences.GetFaceForFaceType(type);
+        uiButton.image.sprite = faceReferences.GetFaceForMood(mood);
     }
 
     
