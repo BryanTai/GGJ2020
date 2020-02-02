@@ -20,9 +20,9 @@ public class ChatController
     public List<ChatItem> chatHistory { get; private set; }
     public event Action<ChatItem> OnChatAdded;
 
-    public void AddChat(string senderName, string message, Color color)
+    public void AddChat(TeamMateClass senderClass, string message)
     {
-        ChatItem newChat = new ChatItem(senderName, message, color);
+        ChatItem newChat = Instantiate(senderClass, message);
         chatHistory.Add(newChat);
         OnChatAdded?.Invoke(newChat);
     }
