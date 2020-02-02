@@ -30,7 +30,7 @@ public class PlayerControlsUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossHealthSlider.value = 1f;
+        SetBossHealthSlider(1f);
 
         for(int s = 0; s < TOTAL_SKILLS; s++)
         {
@@ -56,6 +56,11 @@ public class PlayerControlsUI : MonoBehaviour
         }
     }
 
+    public void SetBossHealthSlider(float healthPercentage)
+    {
+        bossHealthSlider.value = healthPercentage;
+    }
+
     public void OnSkillButtonPressed(int index)
     {
         Debug.LogFormat("Skill {0} pressed!", index);
@@ -78,5 +83,10 @@ public class PlayerControlsUI : MonoBehaviour
             UIButton button = allButtons[i];
             button.ToggleHighlight(i == index);
         }
+    }
+
+    public void ChangeValue(int i)
+    {
+        //
     }
 }
