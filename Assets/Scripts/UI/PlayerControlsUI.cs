@@ -75,6 +75,7 @@ public class PlayerControlsUI : MonoBehaviour
     {
         if (gameController.SelectedSkill == null) return;
 
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().AttackingState(); // set attacking state
         gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
         selectIconSE.PlayOneShot(gameController.SelectedSkill.SkillData.skillSE);
         HighlightButton(teamMateButtons, index);
