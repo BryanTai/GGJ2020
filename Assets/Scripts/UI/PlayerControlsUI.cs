@@ -71,6 +71,8 @@ public class PlayerControlsUI : MonoBehaviour
 
     public void OnTeamMateButtonPressed(int index)
     {
+        if (gameController.SelectedSkill == null) return;
+
         //Debug.LogFormat("Teammate {0} pressed!", index);
         basicHealAudioSource.PlayOneShot(basicHealAudioSource.clip);
         gameController.SelectedSkill?.CastSkill(gameController.TeamMates, index);
