@@ -5,12 +5,20 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour
 {
-    [SerializeField] protected SkillData SkillData;
+    [SerializeField] public SkillData SkillData;
     [HideInInspector] protected float RemainingCoolDown;
     public abstract SkillType SkillType { get; }
     public event Action OnCoolDownRefreshed;
 
-    public abstract void CastSkill(List<TeamMate> teamMates, int targetIndex);
+    public virtual void CastSkill(List<TeamMate> teamMates, int targetIndex)
+    {
+        if (!CanCast(teamMates, targetIndex))
+        {
+            return;
+        }
+
+        RemainingCoolDown = SkillData.CoolDown;
+    }
     public abstract bool CanCast(List<TeamMate> teamMates, int targetIndex);
 
     private void Update()

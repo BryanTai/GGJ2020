@@ -17,25 +17,14 @@ public class SingleHealSkill : Skill
 
     public override void CastSkill(List<TeamMate> teamMates, int targetIndex)
     {
-        if(!CanCast(teamMates, targetIndex))
-        {
-            return;
-        }
+        base.CastSkill(teamMates, targetIndex);
 
         teamMates[targetIndex].Health += SkillData.HealAmount;
         teamMates[targetIndex].Mood += SkillData.MoodAmount;
-        RemainingCoolDown = SkillData.CoolDown;
     }
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        if (teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return teamMates[targetIndex].Health != 0 && this.RemainingCoolDown == 0;
     }
 }

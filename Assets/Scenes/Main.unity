@@ -1652,7 +1652,7 @@ MonoBehaviour:
   - {fileID: 2089170185}
   - {fileID: 1473696459}
   - {fileID: 233016010}
-  MonsterHealthTimer: 10
+  MonsterHealthTimer: 60
   MonsterAttackFrequency: 1
   MonsterAttackPower: 10
   gameCanvas: {fileID: 1179161051}
