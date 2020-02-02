@@ -8,6 +8,7 @@ public class TeamMate : Entity
     [SerializeField] private int MaxMood;
     [SerializeField] private TeamMateClass Class;
     public event Action<int> OnMoodChanged;
+    public event Action OnRageQuit;
 
     private int _mood;
     public int Mood
@@ -24,6 +25,9 @@ public class TeamMate : Entity
 
             if(oldMood != _mood)
                 OnMoodChanged?.Invoke(_mood);
+
+            if (_mood == 0)
+                OnRageQuit?.Invoke();
         }
     }
 
