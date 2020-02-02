@@ -42,6 +42,6 @@ public class AoeHealSkill : Skill
 
     public override bool CanCast(List<TeamMate> teamMates, int targetIndex)
     {
-        return teamMates[targetIndex].IsAlive && this.RemainingCoolDown == 0;
+        return teamMates[targetIndex].IsAlive && this.RemainingCoolDown == 0 && teamMates[targetIndex].IsOnline;
     }
 }
