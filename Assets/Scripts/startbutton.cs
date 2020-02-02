@@ -19,10 +19,10 @@ public class startbutton : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadSceneAsync("Main");
+        SceneManager.LoadScene("Main");
     }
     public void Replay()
     {
-        SceneManager.LoadSceneAsync("SplashScreen");
+        SceneManager.LoadScene("SplashScreen");
     }
 }
