@@ -65,7 +65,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a8b9c86d53b8d8944b42ae3afdf977f5, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -77,7 +77,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is some test text for the Chat System!! ASDFKLHJKLSDJFHKLSJDFHKDSJFKSFJD
+  m_Text: "This is some test text for the Chat System!! ASDFKLHJKLSDJFHKLSJDFHKDSJFKSFJD
+    (*\uFFE3\u25BD\uFFE3)b"
 --- !u!114 &3292261467384727167
 MonoBehaviour:
   m_ObjectHideFlags: 0
